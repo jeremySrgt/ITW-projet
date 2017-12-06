@@ -1,0 +1,61 @@
+
+body{
+    margin:0;
+}
+
+#global{
+    background-color:black;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1200px;
+}
+
+#menu{
+    background-color: yellow;
+    width: 1200px;
+    height: 75px;
+    display: inline-block;
+}
+
+#article_apercu{
+    background-color: white;
+    width: 1000px;
+    height: 400px;
+    margin-top: 45px;
+    margin-left: 100px;
+    display: inline-block;
+}
+.photo_apercu{
+    background-color: white;
+    width: 300px;
+    height: 280px;
+    margin-left: 23px;
+    display: inline-block;
+    overflow: hidden;
+    border-bottom: solid;
+    border-color: #747474;
+    border-width: 2px;
+}
+
+.photo_desc{
+    background-color: white;
+    width: 300px;
+    height: 100px;
+    margin-left: 23px;
+    margin-top: 12px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Rubik', sans-serif;
+    display: inline-block;
+}
+.photo_desc i{
+    font-size: small;
+    color: #4c4c4c;
+    text-transform: lowercase;
+}
+
+.photo_desc b{
+    font-size: 20px;
+    color: #000000;
+}
+
