@@ -4043,7 +4043,7 @@ RawBlameHistory
 }
 .ih-item.square.effect13 .info {
     background: #333333;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(255, 255, 255, 0); /*change la couleur du fond de l'animation*/
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
