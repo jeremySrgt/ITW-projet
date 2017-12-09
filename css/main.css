@@ -4,7 +4,7 @@ body{
 }
 
 #global{
-    background-color:black;
+    background-color:white;
     margin-left: auto;
     margin-right: auto;
     width: 1200px;
@@ -18,7 +18,7 @@ body{
 }
 
 #article_apercu{
-    background-color: green;
+    background-color: white;
     width: 1000px;
     height: 400px;
     margin-top: 45px;
@@ -60,17 +60,31 @@ body{
 }
 
 
-#carrousel{
-    background-color: red;
+.carrousel{
+    background-color: white;
     margin-top: 40px;
     margin-left: 100px;
     width: 1000px;
-    height: 340px;
+    height: 400px;
 }
 
 #carrousel_titre{
     text-align: center;
     text-transform: uppercase;
+}
+
+.carrousel_slider{
+    color: blue;
+    margin-top: 10px;
+    margin-left: 50px;
+    width: 900px;
+    height: 310px;
+
+}
+
+
+#visualisation{
+    margin-top: 120px;
 }
 
 

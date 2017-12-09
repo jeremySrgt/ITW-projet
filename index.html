@@ -5,8 +5,13 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/AccueilMenu.css">
     <link href="css/iHover.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="js/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="js/slick/slick-theme.css"/>
+
     <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/slick/slick.min.js"></script>
 
 
     <title>SY SportsWear Officiel</title>
@@ -88,9 +93,34 @@
             </div>
         </div>
 
-        <div id="carrousel">
+        <div class="carrousel">
             <div id="carrousel_titre">titre du carrousel</div>
+            <div class="carrousel_slider">
+                <div><img src="img/haut_femme.png" alt="img" title="haut femme" width="300" height="300"></div>
+                <div><img src="img/pantalon_homme.png" alt="img" title="pantalon homme" width="300" height="300"></div>
+                <div><img src="img/haut_homme.png" alt="img" title="haut homme" width="300" height="300"></div>
+                <div><img src="img/pantalon_homme.png" alt="img" title="pantalon homme" width="300" height="300"></div>
+                <div><img src="img/haut_femme.png" alt="img" title="haut femme" width="300" height="300"></div>
+            </div>
         </div>
+
+        <div id="visualisation">
+            a enlever
+            <!--juste pour se rendre compte-->
+        </div>
+
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('.carrousel_slider').slick({
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 2000,
+                    dots : true
+            });
+            });
+        </script>
 
     </div>
 </body>
