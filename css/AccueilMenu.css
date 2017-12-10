@@ -4,6 +4,8 @@
     width: 1200px;
     height: 80px;
     display: inline-block;
+    position: fixed;
+    z-index: 100;
 }
 
 
