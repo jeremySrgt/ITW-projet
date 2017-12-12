@@ -20,7 +20,7 @@ width: 60px;
 margin-top: 10px;
 height: 60px;
 background-color : red;
-background-image: url("logo60x60.PNG");
+background-image: url("../img/logo60x60.PNG");
 text-align: center;
 /* case carré du logo de la barre menu.*/
 }
