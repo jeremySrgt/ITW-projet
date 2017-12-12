@@ -84,7 +84,7 @@ body{
 
 
 .bas_page{
-    background-color: grey;
+    background-color: darkgrey;
     margin-top: 70px;
     bottom:0;
     width: 1200px;
@@ -92,11 +92,11 @@ body{
     display: inline-block;
 }
 #social{
-    background-color: grey;
+    background-color: darkgrey;
     width: 200px;
-    height: 80px;
+    height: 100px;
     display: inline-block;
-    margin-top: 5px;
+    margin-top: 10px;
     margin-left: 50px;
     text-align: center;
     font-family: 'Rubik', sans-serif;
@@ -104,7 +104,7 @@ body{
 }
 
 #credit{
-    background-color: grey;
+    background-color: darkgrey;
     width: 300px;
     height: 160px;
     margin-top: 10px;
@@ -118,7 +118,7 @@ body{
 
 
 #contact{
-    background-color: grey;
+    background-color: darkgrey;
     margin-left: 450px;
     margin-top: 10px;
     width: 300px;

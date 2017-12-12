@@ -61,7 +61,7 @@
 			if (options.tumblr.name) {
 				shareURLs['tumblr'] += '&name=' + encodeURIComponent(options.tumblr.name);
 			}
-			
+
 			if (options.tumblr.description) {
 				shareURLs['tumblr'] += '&description=' + encodeURIComponent(options.tumblr.description);
 			}
@@ -93,7 +93,7 @@
 			// Create a helper <span> elements
 
 			elem.addClass('socialPlugin');
-			elem.append('<span class="showSocialButtons fa fa-share"></span>');
+			elem.append('<span class="showSocialButtons fa fa-share-alt"></span>');
 			elem.append('<span class="socials"></span>');
 
 			// Generate the share buttons
@@ -164,5 +164,5 @@
 
 		return this;
 	};
-	
+
 })(jQuery);
