@@ -3017,7 +3017,7 @@ RawBlameHistory
 }
 .ih-item.square.effect6 .info {
     background: #333333;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(255, 165, 0, 0.6);/*couleur changer du fond de l'animation*/
     visibility: hidden;
     opacity: 0;
     -webkit-transition: all 0.35s ease-in-out;
