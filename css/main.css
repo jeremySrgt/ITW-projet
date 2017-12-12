@@ -83,8 +83,30 @@ body{
 }
 
 
-#visualisation{
-    margin-top: 120px;
+.bas_page{
+    background-color: blue;
+    bottom: 0;
+    width: 1200px;
+    height: 100px;
+    display: inline-block;
 }
+#social{
+    background-color: black;
+    width: 200px;
+    height: 80px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+#credit{
+    background-color: black;
+    width: 200px;
+    height: 80px;
+    margin-top: 10px;
+    margin-left: 700px;
+    display: inline-block;
+}
+
 
 
