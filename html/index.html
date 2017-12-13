@@ -7,6 +7,7 @@
     <link href="../css/iHover.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../js/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="../js/slick/slick-theme.css"/>
+    <link rel="stylesheet" type="text/css" href="../js/searchBox/searchCSS.css"/>
 
 
     <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
@@ -34,7 +35,13 @@
                 <div class="casemenu"><a class="link-1" href="#">Présentation</a>  </div>
             </div>
             <div class="blockrecherche">
-                <div class="caserecherche"></div>
+                <div id="container">
+                    <div id="form">
+                        <form action="#" class="entypo-search">
+                            <fieldset><input id="search" placeholder="rechercher" /></fieldset>
+                        </form>
+                    </div>
+                </div>
             </div>
             <div class="blockpanier">blockpanier</div>
 
@@ -150,6 +157,7 @@
             });
             });
         </script>
+
         <script src="../js/sharePlugin/cool-share/plugin.js"></script>
         <script src="../js/sharePlugin/js/demo.js"></script>
     </div>

@@ -1,0 +1,97 @@
+
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+
+/* entypo */
+[class*="entypo-"]:before {
+    font-family: 'entypo', sans-serif;
+    color: #EEA200; /*couleur de l'icon de loupe*/
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    outline: 0px;
+    box-shadow: 0px;
+}
+
+
+
+#container {
+    height: 300px;
+    margin-top: 15px;
+}
+
+.entypo-search:before {
+    position: absolute;
+    top: 0.4em;
+    left: 0;
+
+
+}
+
+#form {
+    background-color: white;
+    border-radius: 30px;
+    border:solid;
+    border-color: #EEA200;
+    border-width: 2px;
+    padding: 8px 14px;
+    width: 10px;
+    overflow: hidden;
+    position: absolute;
+    height: 20px;
+    right: 10%;
+    top:21%;
+    -webkit-transition: width .55s ease;
+    -moz-transition: width .55s ease;
+    -ms-transition: width .55s ease;
+    -o-transition: width .55s ease;
+    transition: width .55s ease;
+
+
+}
+
+form {
+    position: relative;
+
+
+}
+
+input {
+    width:0px;
+    height: 25px;
+    font-size: 15px;
+    margin-left: 33px;
+    /* margin-top: 3px; */
+    line-height: 30px;
+    background-color : white;
+    color: #EEA200;
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #EEA200;
+}
+
+
+.entypo-search {
+    position: absolute;
+    top: 10%;
+}
+
+#form:hover {
+    width: 140px;
+
+
+}
+
+#form:hover form input {
+    width: 140px;
+
+}
+
+#form form input:focus,
+#form form input:active{
+    outline:none;
+    width: 300px;
+
+}
