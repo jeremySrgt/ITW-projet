@@ -1,0 +1,28 @@
+
+.blockgeneral{
+    width: 1200px;
+    height: 1000px;
+    background-color: red;
+    position:absolute;
+
+
+
+}
+
+.blockarticles{
+
+    height:800px;
+    width:300px;
+    background-color: green;
+    margin-top: 100px;
+    margin-left : 50px;
+}
+
+.casephotoarticle{
+    height:400px;
+    width:280px;
+    margin-left:1px;
+    margin-top: 50px;
+    background-color: yellow;
+
+}
