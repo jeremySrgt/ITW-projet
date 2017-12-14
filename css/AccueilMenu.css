@@ -14,31 +14,31 @@
 
 
 .caselogo{
-margin-left: 10px;
-display: inline-block;
-width: 60px;
-margin-top: 10px;
-height: 60px;
-background-color : red;
-background-image: url("../img/logo60x60.PNG");
-text-align: center;
-/* case carré du logo de la barre menu.*/
+    margin-left: 10px;
+    display: inline-block;
+    width: 60px;
+    margin-top: 10px;
+    height: 60px;
+    background-color : red;
+    background-image: url("../img/logo60x60.PNG");
+    text-align: center;
+    /* case carré du logo de la barre menu.*/
 }
 
 
 
 .blockmenu{
-margin-left: 100px;
-display: inline-block;
-height: 80px;
-width: 645px;
-background-color : white;
-position: absolute;
+    margin-left: 100px;
+    display: inline-block;
+    height: 80px;
+    width: 645px;
+    background-color : white;
+    position: absolute;
 
 }
 
 .casemenu {
-background-color: white;
+    background-color: white;
     height: 50px;
     width: 150px;
     display: inline-block;
@@ -52,22 +52,25 @@ background-color: white;
 }
 
 .blockrecherche{
-width: 210px;
-height:80px;
-background-color: white;
-margin-left: 765px;
-display: inline-block;
+    width: 210px;
+    height:80px;
+    background-color: white;
+    margin-left: 765px;
+    display: inline-block;
     position: absolute;
 }
 
 
 .blockpanier{
-width: 100px;
-height:80px;
-background-color: black;
-margin-left: 1000px;
-display: inline-block;
-position: absolute;
+    width: 100px;
+    height:80px;
+    background-color: black;
+    margin-left: 1000px;
+    display: inline-block;
+    position: absolute;
+    font-size: 100%;
+    font-family: "PT Sans", sans-serif;
+    color: #31353d;
 }
 
 

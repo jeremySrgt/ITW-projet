@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="../js/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="../js/slick/slick-theme.css"/>
     <link rel="stylesheet" type="text/css" href="../js/searchBox/searchCSS.css"/>
+    <link rel="stylesheet" type="text/css" href="../js/side-shopping-cart/css/style.css">
 
 
     <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
@@ -17,6 +18,11 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="../js/slick/slick.min.js"></script>
+    <script src="../js/side-shopping-cart/js/modernizr.js"></script>
+    <script src="../js/side-shopping-cart/js/main.js"></script>
+    <script src="../js/sharePlugin/cool-share/plugin.js"></script>
+    <script src="../js/sharePlugin/js/demo.js"></script>
+
 
     <!-- Demo page source -->
 
@@ -43,7 +49,34 @@
                     </div>
                 </div>
             </div>
-            <div class="blockpanier">blockpanier</div>
+            <div class="blockpanier">
+                <header>
+                    <!-- logo and menu here -->
+                    <div id="cd-cart-trigger"><a class="cd-img-replace" href="#0">Cart</a></div>
+                </header>
+                
+                <div id="cd-shadow-layer"></div>
+                <div id="cd-cart">
+                    <h2>Cart</h2>
+                    <ul class="cd-cart-items">
+                        <li>
+                            article 1
+                        </li>
+
+                        <li>
+                            article 2
+                        </li>
+                    </ul> <!-- cd-cart-items -->
+
+                    <div class="cd-cart-total">
+                        <p>Total <span>€39.96</span></p>
+                    </div> <!-- cd-cart-total -->
+
+                    <a href="#0" class="checkout-btn">Checkout</a>
+
+                    <p class="cd-go-to-cart"><a href="#0">Go to cart page</a></p>
+                </div>
+            </div>
 
         </div>
         <div id="article_apercu">
@@ -158,8 +191,16 @@
             });
         </script>
 
-        <script src="../js/sharePlugin/cool-share/plugin.js"></script>
-        <script src="../js/sharePlugin/js/demo.js"></script>
+
+<!-- pour le panier mais es ce vrmt utile ?
+        <script>jQuery(document).ready(function($){
+            $('.close-carbon-adv').on('click', function(event){
+                event.preventDefault();
+                $('#carbonads-container').hide();
+            });
+        });
+        </script>
+        -->
     </div>
 
 </body>
