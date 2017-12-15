@@ -593,9 +593,9 @@
 				},
 
 				remove: function (item,column) {
-					return "<a href='javascript:;' class='" + namespace + "_remove'>" + (column.text || "R") + "</a>";
-					//return "<a href='javascript:;' class='" + namespace + "_remove'>"+"</a>";
-				}
+                    //return "<a href='javascript:;' class='" + namespace + "_remove'>" + (column.text || "'<a class='cd-item-remove cd-img-replace'>suppr</a>'") + "</a>";
+                    return "<a href='javascript:;' class='" + namespace + "_remove'>" + (column.text || "<div class='cd-item-remove cd-img-replace'>suppr</div>") + "</a>";
+                }
 			};
 
 			// cart column wrapper class and functions
