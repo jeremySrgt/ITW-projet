@@ -70,7 +70,9 @@ body{
 
 #carrousel_titre{
     text-align: center;
-    text-transform: uppercase;
+    font-family: 'Asap', serif;
+    font-size: x-large;
+    color: #EEA200;
 }
 
 .carrousel_slider{
