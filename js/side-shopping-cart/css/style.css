@@ -236,14 +236,17 @@ xheader
 }
 #cd-cart .cd-cart-items {
   padding: 0;
+
 }
 #cd-cart .cd-cart-items li {
   position: relative;
   padding: 1em;
-  border-top: 1px solid #e0e6ef;
+  border-top: 1px solid #e0e6ef; /*les li font les bordures dans le panier*/
+
+
 }
 #cd-cart .cd-cart-items li:last-child {
-  border-bottom: 1px solid #e0e6ef;
+    border-bottom: 1px solid #e0e6ef;
 }
 #cd-cart .cd-qty, #cd-cart .cd-price {
   color: #a5aebc;
@@ -252,10 +255,8 @@ xheader
   margin-top: .4em;
 }
 #cd-cart .cd-item-remove {
-  position: absolute;
-  right: 1em;
-  top: 50%;
-  bottom: auto;
+    margin-top:-20px;
+    margin-left:300px;
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
@@ -274,6 +275,7 @@ xheader
 #cd-cart .cd-cart-total {
   padding-top: 1em;
   padding-bottom: 1em;
+
 }
 #cd-cart .cd-cart-total span {
   float: right;
