@@ -58,6 +58,18 @@ body{
     font-size: 20px;
     color: #000000;
 }
+.photo_desc a{
+    font-size: small;
+    color: #000000;
+    font-family: 'Nunito',sans-serif;
+}
+.photo_desc a:hover{
+    font-size: small;
+    color: #545454;
+    font-family: 'Nunito',sans-serif;
+}
+
+
 
 
 .carrousel{
