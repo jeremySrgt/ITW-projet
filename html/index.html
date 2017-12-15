@@ -60,27 +60,26 @@
                 <div id="cd-cart">
                     <h2>Panier <span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> articles)</h2>
                     <ul class="cd-cart-items">
-                        <li class="simpleCart_shelfItem">
-                            <span class="cd-qty">x1</span>
-                            <a href="javascript:" onclick="simpleCart.add({name:'haut homme', price: 110.00});" >haut homme</a>
+                        <li>
+                            <!--<span class="cd-qty">x1</span>
+                            <!--<a href="javascript:" onclick="simpleCart.add({name:'haut homme', price: 110.00});" >haut homme</a>
                             <div class="cd-price">€110.00</div>
                             <!--<a href="#0" class="cd-item-remove cd-img-replace"><!-- ne fonctionne pas-->
                             <div class="simpleCart_items">
                                 <!-- apparait du html lorsqu'un element est ajouter au panier/peu etre supprimé-->
                             </div>
-                            </a>
                         </li>
                         <li>
-                            <span class="cd-qty">x1</span>
+                            <!--<span class="cd-qty">x1</span>
                             haut femme
                             <div class="cd-price">€210.00</div>
-                            <a href="#0" class="cd-item-remove cd-img-replace">Supprimer</a>
+                            <a href="#0" class="cd-item-remove cd-img-replace">Supprimer</a>-->
                         </li>
                         <li>
-                            <span class="cd-qty">x1</span>
+                            <!--<span class="cd-qty">x1</span>
                             pantalon homme
                             <div class="cd-price">€300.99</div>
-                            <a href="#0" class="cd-item-remove cd-img-replace">Supprimer</a>
+                            <a href="#0" class="cd-item-remove cd-img-replace">Supprimer</a>-->
                         </li>
                     </ul> <!-- cd-cart-items -->
 
@@ -142,19 +141,25 @@
             </div>
 
             <div class="photo_desc">
-                Juste au corps Homme <br />
+                <div class="simpleCart_shelfItem">
+                    <a href="javascript:" onclick="simpleCart.add({name:'Haut Homme', price: 999.00});" >Juste au corps Homme</a> <!--<br />-->
+                </div>
                 <i>anti transpiration, anti bactéries</i><br />
                 <br />
                 <b>100,00 €</b>
             </div>
             <div class="photo_desc">
-                Pantalon Homme <br />
+                <div class="simpleCart_shelfItem">
+                    <a href="javascript:" onclick="simpleCart.add({name:'Pantalon Homme', price: 100.00});" >Pantalon Homme</a>
+                </div>
                 <i>anti transpiration, agréable</i><br />
                 <br />
                 <b>137,00 €</b>
             </div>
             <div class="photo_desc">
-                Juste au corps Femme <br />
+                <div class="simpleCart_shelfItem">
+                    <a href="javascript:" onclick="simpleCart.add({name:'Haut Femme', price: 100.00});" >Haut Femme</a>
+                </div>
                 <i>anti transpiration, anti bactéries</i><br />
                 <br />
                 <b>100,00 €</b>

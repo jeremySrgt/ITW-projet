@@ -88,18 +88,24 @@
 				// default options
 				settings = {
 					checkout				: { type: "PayPal", email: "you@yours.com" },
-					currency				: "USD",
-					language				: "english-us",
+					currency				: "EUR",
+					language				: "francais",
 
 					cartStyle				: "div",
 					cartColumns			: [
-						//{ attr: "name", label: "Name" },         //peut servir pour les recap de commande ne pas activer dans le panier latérale
-						//{ attr: "price", label: "Price", view: 'currency' },
-						//{ view: "decrement", label: false },
-						//{ attr: "quantity", label: "Qty" },
-						//{ view: "increment", label: false },
-						//{ attr: "total", label: "subTotal", view: 'currency' },
+                        {
+                            view: function (item) {
+                                return "<div class=\"cd-price\">x" + item.quantity() + "</div>"; //cette fonction permet de mettre en forme la quantiter
+                            },
+                        },
+						{ attr: "name", label: "" },         //nom de l'article concerner
+                        { attr: "price", label: "", view: 'currency'},  //prix de l'article concerner
+						//{ view: "decrement", label: false },  // decrement de +1 larticle dans le panier
+						//{ attr: "quantity", label: "" }, // quantiter de l'article en question dans le panier
+						//{ view: "increment", label: false }, // increment de +1 larticle dans le panier
+						//{ attr: "total", label: "", view: 'currency' }, //le sous-total des article calculer en fct de la quantiter
 						{ view: "remove", text: "", label: false }
+
 					],
 
 					excludeFromCheckout	: ['thumb'],
@@ -593,9 +599,10 @@
 				},
 
 				remove: function (item,column) {
-                    //return "<a href='javascript:;' class='" + namespace + "_remove'>" + (column.text || "'<a class='cd-item-remove cd-img-replace'>suppr</a>'") + "</a>";
+                    //return "<a href='javascript:;' class='" + namespace + "_remove'>" + (column.text || "X") + "</a>";
                     return "<a href='javascript:;' class='" + namespace + "_remove'>" + (column.text || "<div class='cd-item-remove cd-img-replace'>suppr</div>") + "</a>";
                 }
+
 			};
 
 			// cart column wrapper class and functions
