@@ -23,8 +23,8 @@
 }
 .notification-badge-top {
     position: absolute;
-    top: -2px;
-    right: -3px;
+    top: 18px;
+    right: 18px;
 }
 .notification-badge-bottom {
     position: absolute;
@@ -33,5 +33,5 @@
 }
 
 .notification-badge-important {
-    background-color: #d33;
+    background-color: #EEA200;
 }

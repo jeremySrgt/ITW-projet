@@ -112,14 +112,6 @@ nav {
     color: black;
 }
 
-.badge_notif{
-    background-color: red;
-    width: 80px;
-    height: 80px;
-    margin-left: 200px;
-    position: absolute;
-    z-index: 110;
-}
 
 
 
