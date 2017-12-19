@@ -45,7 +45,6 @@ p{
 
 @media (max-width: 1024px) {
 	html {min-height: 120%;}
-	body{ font-size:16px;}
 	h1{ font-size: 24px;}
 }
 
