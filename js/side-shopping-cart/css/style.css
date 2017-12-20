@@ -288,14 +288,16 @@ xheader
 }
 #cd-cart .checkout-btn {
   display: block;
-  width: 340px;
+  width: 300px;
   height: 60px;
   line-height: 60px;
   background: #7dcf85;
   color: #FFF;
-  text-align: center;
+    text-align: center;
     text-decoration: none;
 }
+
+
 .no-touch #cd-cart .checkout-btn:hover {
   background: #a2dda8;
 }
@@ -303,7 +305,7 @@ xheader
   text-align: center;
   margin: 1em 0;
     display: block;
-    width: 340px;
+    width: 300px;
     height: 60px;
     line-height: 60px;
     background: #EEA200;

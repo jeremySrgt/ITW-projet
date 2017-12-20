@@ -7,43 +7,199 @@
     <link href="../css/iHover.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../js/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="../js/slick/slick-theme.css"/>
-    <link rel="stylesheet" type="text/css" href="../css/actualite.css"/>
+    <link rel="stylesheet" type="text/css" href="../js/searchBox/searchCSS.css"/>
+    <link rel="stylesheet" type="text/css" href="../js/side-shopping-cart/css/style.css">
+    <link href="../js/sharePlugin/cool-share/plugin.css" media="all" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="../js/badgeCount/BadgeCss.css">
+    <link rel="stylesheet" type="text/css" href="../css/actualite.css">
 
 
     <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet"> <!---police titres rubriques-->
-    <link href="../js/sharePlugin/cool-share/plugin.css" media="all" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Asap|Raleway|Nunito:900|Khula" rel="stylesheet"> <!---police titres rubriques-->
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="../js/slick/slick.min.js"></script>
+    <script src="../js/side-shopping-cart/js/modernizr.js"></script>
+    <script src="../js/side-shopping-cart/js/main.js"></script>
+    <script src="../js/sharePlugin/cool-share/plugin.js"></script>
+    <script src="../js/sharePlugin/js/demo.js"></script>
+    <script src="../js/add_remove_from_cart/simpleCart.js"></script>
+    <script src="../js/badgeCount/Counting.js"></script>
 
 
 
-    <title>Les news SY SportsWear Officiel</title>
+
+    <!-- Demo page source -->
+
+
+
+
+    <title>SY SportsWear Officiel</title>
 </head>
 <body>
-    <div id="global">
-        <div class="menu">
-            <div class="caselogo"></div>
-            <div class="blockmenu">
-                <div class="casemenu"> <a class="link-1" href="#">Actualités</a></div>
-                <div class="casemenu"><a class="link-1" href="#">Boutique</a> </div>
-                <div class="casemenu"><a class="link-1" href="#">Présentation</a>  </div>
-            </div>
-	    <div class="blockrecherche">
-			<div class="caserecherche"> </div>
-	    </div>
-
-	    <div class="blockpanier">blockpanier </div>
-
+<div id="global">
+    <div class="menu">
+        <div class="caselogo"></div>
+        <div class="blockmenu">
+            <div class="casemenu"> <a class="link-1" href="#">Actualités</a></div>
+            <div class="casemenu"><a class="link-1" href="#">Boutique</a> </div>
+            <div class="casemenu"><a class="link-1" href="#">Présentation</a>  </div>
         </div>
-        <div class="blockgeneral">
-            <div class="blockarticles">
-                <div class="casephotoarticle"></div>
+        <div class="blockrecherche">
+            <div id="container">
+                <div id="form">
+                    <form action="#" class="entypo-search">
+                        <fieldset><input id="search" placeholder="rechercher" /></fieldset>
+                    </form>
+                </div>
             </div>
+        </div>
+        <div class="blockpanier">
+            <header>
+                <!-- logo and menu here -->
+                <div id="cd-cart-trigger"><a class="cd-img-replace" href="#0">Panier</a></div>
+            </header>
+
+            <div id="cd-shadow-layer"></div>
+            <div id="cd-cart">
+                <h2>Panier <span class="simpleCart_total"></span> (<span class="simpleCart_quantity"></span> articles)</h2>
+                <ul class="cd-cart-items">
+                    <li>
+                        <div class="simpleCart_items">
+                            <!-- apparait du html lorsqu'un element est ajouter au panier/peu etre supprimé-->
+                        </div>
+                    </li>
+                </ul> <!-- cd-cart-items -->
+
+                <div class="cd-cart-total">
+                    Total <div class="simpleCart_total"><span><!--le total apparait ici avec javascript--></span></div>
+                </div> <!-- cd-cart-total -->
+
+                <a href="#0" class="checkout-btn">Payer</a>
+
+                <p class="cd-go-to-cart"><a href="#0">Voir le panier</a></p>
+            </div>
+        </div>
 
     </div>
 
+
+
+    <div class="blockgeneral">
+
+        <div class="blockarticles">
+            <div class="casephotoarticle"></div>
+            <div class="caseTextArticle">
+
+            </div>
+        </div>
+
+        <div class="blockarticles">
+            <div class="casephotoarticle"></div>
+            <div class="caseTextArticle"> </div>
+        </div>
+
+        <div class="blockarticles">
+            <div class="casephotoarticle"></div>
+            <div class="caseTextArticle"> </div>
+        </div>
+
+        <div class="blockarticles">
+            <div class="casephotoarticle"></div>
+            <div class="caseTextArticle"> </div>
+        </div>
+
+        <div class="blockarticles">
+            <div class="casephotoarticle"></div>
+            <div class="caseTextArticle"> </div>
+        </div>
+
+        <div class="blockarticles">
+            <div class="casephotoarticle"></div>
+            <div class="caseTextArticle"> </div>
+        </div>
+    </div>
+
+
+
+
+
+<div class="bas_page">
+    <div id="social">
+        <span><b>Appuyez pour partager !</b></span>
+        <span class="share"></span>
+
+    </div>
+    <div id="contact"><span><b>Contactez-nous</b><br /><br />
+                <i class="fa fa-envelope-o"></i>  SY-sportswear@gmail.com<br /><br />
+                <i class="fa fa-phone"></i>  01.48.57.33.28</span>
+    </div>
+
+    <div id="credit">
+                <span>
+                    <b>Valentin Soudy<br />
+                        Jérémy Surget</b><br /><br />
+                    <i>site factice<br />
+                    réalisé dans le cadre des études</i>
+                </span>
+    </div>
+</div>
+
+<script type="text/javascript">
+            $(document).ready(function(){
+                $('.carrousel_slider').slick({
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 2000,
+                    dots : true
+            });
+            });
+        </script>
+<script  type="text/javascript">
+            $('.blockpanier').badge(22,'top')
+
+        </script>
+</div>
+
+<script>
+$(document).ready(function(){
+	$('.p1').collapser({
+		mode: 'chars',
+		truncate: 30
+	});
+
+	$('.p2').collapser({
+		mode: 'block',
+		showText: 'Show paragraph',
+		hideText: 'Hide paragraph',
+		changeText: 1
+	});
+
+	$('.p3 li').collapser({
+		mode: 'words',
+		truncate: 2,
+	});
+
+});
+
+</script>
+
+
+
+<style>
+.show-class{
+	background: #f2f2f2;
+}
+.hide-class{
+	background: #fff;
+}
+</style>
+
 </body>
+
+
 </html>
