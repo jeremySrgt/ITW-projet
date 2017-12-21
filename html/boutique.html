@@ -10,8 +10,8 @@
     <link href="../js/sharePlugin/cool-share/plugin.css" media="all" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="../js/badgeCount/BadgeCss.css">
     <link rel="stylesheet" type="text/css" href="../css/boutique.css">
-    <link rel="stylesheet" type="text/css" href="../js/menuBoutique/css/style.css" />
-    <link rel="stylesheet" type="text/css" href="../js/menuBoutique/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="../js/menuBoutique/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../js/menuBoutique/css/reset.css">
 
 
     <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
@@ -28,10 +28,8 @@
     <script src="../js/sharePlugin/js/demo.js"></script>
     <script src="../js/add_remove_from_cart/simpleCart.js"></script>
     <script src="../js/badgeCount/Counting.js"></script>
-    <script src="../js/menuBoutique/js/main.js"></script>
-    <script src="../js/menuBoutique/js/jquery.mobile.custom.min.js"></script>
-
-
+    <script src="../js/badgeCount/Counting.js"></script>
+    <script src="../js/menuBoutique/js/modernizr.js"></script>
 
 
 
@@ -83,76 +81,286 @@
             </div>
         </div>
     </div>
-        <div class="sous_menu_articles">
+        <div class="block_container">
+               <header>
+                   <div class="cd-dropdown-wrapper">
+                       <a class="cd-dropdown-trigger" href="#0">Menu</a>
+                       <nav class="cd-dropdown">
+                           <h2>Title</h2>
+                           <a href="#0" class="cd-close">Close</a>
+                           <ul class="cd-dropdown-content">
+                               <li>
 
-            <header class="cd-main-header">
+                               </li>
+                               <li class="has-children">
+                                   <a href="http://codyhouse.co/?p=748">Homme</a>
 
-                <ul class="cd-header-buttons">
-                    <li><a class="cd-search-trigger" href="#cd-search">Search<span></span></a></li>
-                    <li><a class="cd-nav-trigger" href="#cd-primary-nav">Menu<span></span></a></li>
-                </ul> <!-- cd-header-buttons -->
+                                   <ul class="cd-secondary-dropdown is-hidden">
+                                       <li class="go-back"><a href="#0">Menu</a></li>
+                                       <li class="has-children">
+                                           <a href="http://codyhouse.co/?p=748">Vêtements</a>
 
-            </header>
-            <nav class="cd-nav">
-                <ul id="cd-primary-nav" class="cd-primary-nav is-fixed">
-                    <li class="has-children">
-                        <a href="#0">Clothing</a>
+                                           <ul class="is-hidden">
+                                               <li class="go-back"><a href="#0">Clothing</a></li>
+                                               <li class="see-all"><a href="http://codyhouse.co/?p=748">Tous</a></li>
+                                               <li class="has-children">
+                                                   <a href="#0">Haut</a>
 
-                        <ul class="cd-secondary-nav is-hidden">
-                            <li class="go-back"><a href="#0">Menu</a></li>
-                            <li class="see-all"><a href="#0">All Clothing</a></li>
-                            <li class="has-children">
-                                <a href="#0">Accessories</a>
+                                                   <ul class="is-hidden">
+                                                       <li class="go-back"><a href="#0">Vêtements</a></li>
+                                                       <li class="see-all"><a href="http://codyhouse.co/?p=748">Tous</a></li>
+                                                       <li><a href="http://codyhouse.co/?p=748">juste au corps</a></li>
+                                                       <li><a href="http://codyhouse.co/?p=748">T-shirt</a></li>
+                                                       <li><a href="http://codyhouse.co/?p=748">Marcel</a></li>
+                                                   </ul>
+                                               </li>
+                                               <li class="has-children">
+                                                   <a href="#0">Pantalon</a>
 
-                                <ul class="is-hidden">
-                                    <li class="go-back"><a href="#0">Clothing</a></li>
-                                    <li class="see-all"><a href="#0">All Accessories</a></li>
-                                    <li class="has-children">
-                                        <a href="#0">Beanies</a>
+                                                   <ul class="is-hidden">
+                                                       <li class="go-back"><a href="#0">Vêtements</a></li>
+                                                       <li class="see-all"><a href="http://codyhouse.co/?p=748">Tous</a></li>
+                                                       <li><a href="http://codyhouse.co/?p=748">Joggings</a></li>
+                                                       <li><a href="http://codyhouse.co/?p=748">Runner</a></li>
+                                                       <li><a href="http://codyhouse.co/?p=748">Hats</a></li>
+                                                   </ul>
+                                               </li>
+                                           </ul>
+                                       </li>
 
-                                        <ul class="is-hidden">
-                                            <li class="go-back"><a href="#0">Accessories</a></li>
-                                            <li class="see-all"><a href="#0">All Benies</a></li>
-                                            <li><a href="#0">Caps</a></li>
-                                            <li><a href="#0">Gifts</a></li>
-                                            <li><a href="#0">Scarves</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><!-- ... --></li>
-                                </ul>
-                            </li>
+                                       <li class="has-children">
+                                           <a href="http://codyhouse.co/?p=748">Accessoires</a>
 
-                            <li><!-- ... --></li>
-                            <li><!-- ... --></li>
-                            <li><!-- ... --></li>
-                        </ul>
-                    </li>
+                                           <ul class="is-hidden">
+                                               <li class="go-back"><a href="#0">Clothing</a></li>
+                                               <li class="see-all"><a href="http://codyhouse.co/?p=748">Tous</a></li>
+                                               <li class="has-children">
+                                                   <a href="#0">Haut</a>
 
-                    <li class="has-children">
-                        <!-- ... -->
-                    </li>
+                                                   <ul class="is-hidden">
+                                                       <li class="go-back"><a href="#0">Vêtements</a></li>
+                                                       <li class="see-all"><a href="http://codyhouse.co/?p=748">Tous</a></li>
+                                                       <li><a href="http://codyhouse.co/?p=748">juste au corps</a></li>
+                                                       <li><a href="http://codyhouse.co/?p=748">T-shirt</a></li>
+                                                       <li><a href="http://codyhouse.co/?p=748">Marcel</a></li>
+                                                   </ul>
+                                               </li>
+                                               <li class="has-children">
+                                                   <a href="#0">Pantalon</a>
 
-                    <li class="has-children">
-                        <!-- ... -->
-                    </li>
+                                                   <ul class="is-hidden">
+                                                       <li class="go-back"><a href="#0">Vêtements</a></li>
+                                                       <li class="see-all"><a href="http://codyhouse.co/?p=748">Tous</a></li>
+                                                       <li><a href="http://codyhouse.co/?p=748">Joggings</a></li>
+                                                       <li><a href="http://codyhouse.co/?p=748">Runner</a></li>
+                                                       <li><a href="http://codyhouse.co/?p=748">Hats</a></li>
+                                                   </ul>
+                                               </li>
+                                           </ul>
+                                       </li>
+                                       <!-- des elements peuvent rajouter l'agrandissement de la div est automatique-->
+                                   </ul> <!-- .cd-secondary-dropdown -->
+                               </li> <!-- .has-children -->
 
-                    <li><a href="#0">Standard</a></li>
-                </ul> <!-- primary-nav -->
-            </nav> <!-- cd-nav -->
+                               <li class="has-children">
+                                   <a href="http://codyhouse.co/?p=748">Femme</a>
+                                   <ul class="cd-secondary-dropdown is-hidden">
+                                       <li class="go-back"><a href="#0">Menu</a></li>
+                                       <li class="has-children">
+                                           <a href="http://codyhouse.co/?p=748">Vêtements</a>
 
+                                           <ul class="is-hidden">
+                                               <li class="go-back"><a href="#0">Clothing</a></li>
+                                               <li class="see-all"><a href="http://codyhouse.co/?p=748">Tous</a></li>
+                                               <li class="has-children">
+                                                   <a href="#0">Haut</a>
 
+                                                   <ul class="is-hidden">
+                                                       <li class="go-back"><a href="#0">Vêtements</a></li>
+                                                       <li class="see-all"><a href="http://codyhouse.co/?p=748">Tous</a></li>
+                                                       <li><a href="http://codyhouse.co/?p=748">juste au corps</a></li>
+                                                       <li><a href="http://codyhouse.co/?p=748">T-shirt</a></li>
+                                                       <li><a href="http://codyhouse.co/?p=748">Marcel</a></li>
+                                                   </ul>
+                                               </li>
+                                               <li class="has-children">
+                                                   <a href="#0">Pantalon</a>
 
-            <div id="cd-search" class="cd-search">
-                <form>
-                    <input type="search" placeholder="Search...">
-                </form>
-            </div>
+                                                   <ul class="is-hidden">
+                                                       <li class="go-back"><a href="#0">Vêtements</a></li>
+                                                       <li class="see-all"><a href="http://codyhouse.co/?p=748">Tous</a></li>
+                                                       <li><a href="http://codyhouse.co/?p=748">Joggings</a></li>
+                                                       <li><a href="http://codyhouse.co/?p=748">Runner</a></li>
+                                                       <li><a href="http://codyhouse.co/?p=748">Hats</a></li>
+                                                   </ul>
+                                               </li>
+                                           </ul>
+                                       </li>
+
+                                       <li class="has-children">
+                                           <a href="http://codyhouse.co/?p=748">Accessoires</a>
+
+                                           <ul class="is-hidden">
+                                               <li class="go-back"><a href="#0">Clothing</a></li>
+                                               <li class="see-all"><a href="http://codyhouse.co/?p=748">Tous</a></li>
+                                               <li class="has-children">
+                                                   <a href="#0">Haut</a>
+
+                                                   <ul class="is-hidden">
+                                                       <li class="go-back"><a href="#0">Vêtements</a></li>
+                                                       <li class="see-all"><a href="http://codyhouse.co/?p=748">Tous</a></li>
+                                                       <li><a href="http://codyhouse.co/?p=748">juste au corps</a></li>
+                                                       <li><a href="http://codyhouse.co/?p=748">T-shirt</a></li>
+                                                       <li><a href="http://codyhouse.co/?p=748">Marcel</a></li>
+                                                   </ul>
+                                               </li>
+                                               <li class="has-children">
+                                                   <a href="#0">Pantalon</a>
+
+                                                   <ul class="is-hidden">
+                                                       <li class="go-back"><a href="#0">Vêtements</a></li>
+                                                       <li class="see-all"><a href="http://codyhouse.co/?p=748">Tous</a></li>
+                                                       <li><a href="http://codyhouse.co/?p=748">Joggings</a></li>
+                                                       <li><a href="http://codyhouse.co/?p=748">Runner</a></li>
+                                                       <li><a href="http://codyhouse.co/?p=748">Hats</a></li>
+                                                   </ul>
+                                               </li>
+                                           </ul>
+                                       </li>
+                                       <li class="has-children">
+                                           <a href="http://codyhouse.co/?p=748">Brassière</a>
+
+                                           <ul class="is-hidden">
+                                               <li class="go-back"><a href="#0">Clothing</a></li>
+                                               <li class="see-all"><a href="http://codyhouse.co/?p=748">Tous</a></li>
+                                               <li class="has-children">
+                                                   <a href="#0">Haut</a>
+
+                                                   <ul class="is-hidden">
+                                                       <li class="go-back"><a href="#0">Vêtements</a></li>
+                                                       <li class="see-all"><a href="http://codyhouse.co/?p=748">Tous</a></li>
+                                                       <li><a href="http://codyhouse.co/?p=748">juste au corps</a></li>
+                                                       <li><a href="http://codyhouse.co/?p=748">T-shirt</a></li>
+                                                       <li><a href="http://codyhouse.co/?p=748">Marcel</a></li>
+                                                   </ul>
+                                               </li>
+                                               <li class="has-children">
+                                                   <a href="#0">Pantalon</a>
+
+                                                   <ul class="is-hidden">
+                                                       <li class="go-back"><a href="#0">Vêtements</a></li>
+                                                       <li class="see-all"><a href="http://codyhouse.co/?p=748">Tous</a></li>
+                                                       <li><a href="http://codyhouse.co/?p=748">Joggings</a></li>
+                                                       <li><a href="http://codyhouse.co/?p=748">Runner</a></li>
+                                                       <li><a href="http://codyhouse.co/?p=748">Hats</a></li>
+                                                   </ul>
+                                               </li>
+                                           </ul>
+                                       </li>
+                                       <!-- des elements peuvent rajouter l'agrandissement de la div est automatique-->
+                                   </ul> <!-- .cd-secondary-dropdown -->
+                               </li> <!-- .has-children -->
+
+                               <li class="has-children">
+                                   <a href="http://codyhouse.co/?p=748">Autres</a>
+                                   <ul class="cd-dropdown-icons is-hidden">
+                                       <li class="go-back"><a href="#0">Menu</a></li>
+                                       <li class="see-all"><a href="http://codyhouse.co/?p=748">Browse Services</a></li>
+                                       <li>
+                                           <a class="cd-dropdown-item item-1" href="http://codyhouse.co/?p=748">
+                                               <h3>Service #1</h3>
+                                               <p>This is the item description</p>
+                                           </a>
+                                       </li>
+
+                                       <li>
+                                           <a class="cd-dropdown-item item-2" href="http://codyhouse.co/?p=748">
+                                               <h3>Service #2</h3>
+                                               <p>This is the item description</p>
+                                           </a>
+                                       </li>
+
+                                       <li>
+                                           <a class="cd-dropdown-item item-3" href="http://codyhouse.co/?p=748">
+                                               <h3>Service #3</h3>
+                                               <p>This is the item description</p>
+                                           </a>
+                                       </li>
+
+                                       <li>
+                                           <a class="cd-dropdown-item item-4" href="http://codyhouse.co/?p=748">
+                                               <h3>Service #4</h3>
+                                               <p>This is the item description</p>
+                                           </a>
+                                       </li>
+
+                                       <li>
+                                           <a class="cd-dropdown-item item-5" href="http://codyhouse.co/?p=748">
+                                               <h3>Service #5</h3>
+                                               <p>This is the item description</p>
+                                           </a>
+                                       </li>
+
+                                       <li>
+                                           <a class="cd-dropdown-item item-6" href="http://codyhouse.co/?p=748">
+                                               <h3>Service #6</h3>
+                                               <p>This is the item description</p>
+                                           </a>
+                                       </li>
+
+                                       <li>
+                                           <a class="cd-dropdown-item item-7" href="http://codyhouse.co/?p=748">
+                                               <h3>Service #7</h3>
+                                               <p>This is the item description</p>
+                                           </a>
+                                       </li>
+
+                                       <li>
+                                           <a class="cd-dropdown-item item-8" href="http://codyhouse.co/?p=748">
+                                               <h3>Service #8</h3>
+                                               <p>This is the item description</p>
+                                           </a>
+                                       </li>
+
+                                       <li>
+                                           <a class="cd-dropdown-item item-9" href="http://codyhouse.co/?p=748">
+                                               <h3>Service #9</h3>
+                                               <p>This is the item description</p>
+                                           </a>
+                                       </li>
+
+                                       <li>
+                                           <a class="cd-dropdown-item item-10" href="http://codyhouse.co/?p=748">
+                                               <h3>Service #10</h3>
+                                               <p>This is the item description</p>
+                                           </a>
+                                       </li>
+
+                                       <li>
+                                           <a class="cd-dropdown-item item-11" href="http://codyhouse.co/?p=748">
+                                               <h3>Service #11</h3>
+                                               <p>This is the item description</p>
+                                           </a>
+                                       </li>
+
+                                       <li>
+                                           <a class="cd-dropdown-item item-12" href="http://codyhouse.co/?p=748">
+                                               <h3>Service #12</h3>
+                                               <p>This is the item description</p>
+                                           </a>
+                                       </li>
+
+                                   </ul> <!-- .cd-dropdown-icons -->
+                               </li> <!-- .has-children -->
+                           </ul> <!-- .cd-dropdown-content -->
+                       </nav> <!-- .cd-dropdown -->
+                   </div> <!-- .cd-dropdown-wrapper -->
+               </header>
 
         </div>
 
 
-    <div id="block_articles">
-    </div>
+
 
 
     <div class="bas_page">
@@ -176,12 +384,13 @@
         </div>
     </div>
 
-
     <script  type="text/javascript">
         $('.blockpanier').badge(22,'top')
 
     </script>
 </div>
+<script src="../js/menuBoutique/js/main.js"></script>
+<script src="../js/menuBoutique/js/jquery.menu-aim.js"></script>
 
 </body>
 

@@ -2,6 +2,8 @@
 
 @import '../partials/variables'; // colors, fonts etc...
 
+@import '../partials/mixins'; // custom mixins
+
 @import '../partials/layout'; // responsive grid and media queries
 
 /* -------------------------------- 
@@ -24,13 +26,7 @@ body {
 		family: $primary-font; // variables inside partials > _variables.scss
 	}
 	color: $color-1;
-	background-color: $color-4;
-
-	@include MQ(maxL) { // layout mixins inside partials > _layout.scss
-		&.nav-on-left.overflow-hidden {
-			overflow: hidden;
-		}
-	}
+	background-color: $color-3;
 }
 
 a {
@@ -39,7 +35,6 @@ a {
 }
 
 img {
-	/* make images responsive */
 	max-width: 100%;
 }
 
@@ -48,375 +43,391 @@ input {
 	font-size: 1.6rem;
 }
 
-input[type="search"]::-ms-clear {
-	/* removes close icon - IE */
-    display: none;
-}
-
+/* remove “X” from search input field */
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
-input[type="search"]::-webkit-search-results-decoration {
-  display: none;
-}
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+input[type=text]::-ms-clear {  display: none; width : 0; height: 0; }
+input[type=text]::-ms-reveal {  display: none; width : 0; height: 0; }
 
 /* -------------------------------- 
 
-Main components 
+Main Components 
 
 -------------------------------- */
 
-.cd-main-content, .cd-main-header {
-	/* Force Hardware Acceleration in WebKit */
-	@include transform(translateZ(0));
-	will-change: transform;
-}
-
-.cd-main-content, .cd-main-header {
-	position: relative;
-	@include transition(transform .3s);
-
-	@include MQ(maxL) {
-		&.nav-is-visible {
-			@include transform(translateX(-$nav-width-S));
-		}
-
-		.nav-on-left &.nav-is-visible {
-			@include transform(translateX($nav-width-S));
-		}
-	}
-}
-
-.cd-main-content {
+header {
+	height: 100px;
 	background: $color-3;
-	min-height: 100vh;
-	z-index: $content;
 }
 
-.cd-main-header {
-	height: $header-height-S;
-	background: $color-4;
-	z-index: $above-content;
-
-	.nav-is-fixed & {
-		/* add .nav-is-fixed class to body if you want a fixed navigation on > 1170px */
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-	}
-
-	@include MQ(L) {
-		height: $header-height-L;
-		@include clearfix;
-	}
-}
-
-.cd-logo {
-	position: absolute;
-	top: 12px;
-	left: 5%;
-
-	img {
-		display: block;
-	}
-
-	@include MQ(maxL) {
-		.nav-on-left & {
-			left: auto;
-			right: 5%;
-		}
-	}
-
-	@include MQ(L) {
-		top: 26px;
-		left: 4em;
-	}
-}
-
-.cd-header-buttons {
-	position: absolute;
+.cd-dropdown-wrapper {
 	display: inline-block;
-	top: 3px;
-	right: 5%;
-
-	li {
-		display: inline-block;
-	}
-
-	@include MQ(maxL) {
-		.nav-on-left & {
-			right: auto;
-			left: 5%;
-
-			li {
-				float: right;
-			}
-		}
-	}
-
-	@include MQ(L) {
-		top: 18px;
-		right: 4em;
-	}
-}
-
-.cd-search-trigger, .cd-nav-trigger {
 	position: relative;
-	display: block;
-	width: 44px;
-	height: 44px;
-	overflow: hidden;
-	white-space: nowrap;
-	/* hide text */
-	color: transparent;
-	z-index: $above-content;
+	height: 40px;
+	margin: 30px 0 0 5%; 
+	@include font-smoothing;
 }
 
-.cd-search-trigger {
+.cd-dropdown-trigger {
+	display: block;
+	position: relative;
+	padding: 0 36px 0 20px;
+	line-height: 40px;
+	background-color: $color-1;
+	color: $color-3;
+	border-radius: 3px;
+
+	.no-touch &:hover {
+		background-color: lighten($color-1, 5%);
+	}
 
 	&::before, &::after {
-		/* search icon */
+		/* this is the arrow inside the dropdown trigger*/
 		content: '';
 		position: absolute;
-		@include transition(opacity .3s);
-		/* Force Hardware Acceleration in WebKit */
-		@include transform(translateZ(0));
-		-webkit-backface-visibility: hidden;
-		backface-visibility: hidden;
+		top: 50%;
+		margin-top: -1px;
+		height: 2px;
+		width: 9px;
+		background: $color-3;
+		@include backface-visibility(hidden);
+		
+		@include transition(width .3s, transform .3s);		
 	}
 
 	&::before {
-		/* lens */
-		top: 11px;
-		left: 11px;
-		width: 18px;
-		height: 18px;
-		border-radius: 50%;
-		border: 3px solid $color-1;
+		right: 22px;
+		@include transform(rotate(45deg));
 	}
 
 	&::after {
-		/* handle */
-		height: 3px;
-		width: 8px;
-		background: $color-1;
-		bottom: 14px;
-		right: 11px;
-		@include transform(rotate(45deg));
-	}
-
-	span {
-		/* container for the X icon */
-		position: absolute;
-		height: 100%;
-		width: 100%;
-		top: 0;
-		left: 0;
-	}
-
-	span::before, span::after {
-		/* close icon */
-		content: '';
-		position: absolute;
-		display: inline-block;
-		height: 3px;
-		width: 22px;
-		top: 50%;
-		margin-top: -2px;
-		left: 50%;
-		margin-left: -11px;
-		background: $color-1;
-		opacity: 0;
-		/* Force Hardware Acceleration in WebKit */
-		@include transform(translateZ(0));
-		-webkit-backface-visibility: hidden;
-		backface-visibility: hidden;
-		@include transition(opacity .3s, transform .3s);
-	}
-
-	span::before {
-		@include transform(rotate(45deg));
-	}
-
-	span::after {
+		right: 17px;
 		@include transform(rotate(-45deg));
 	}
 
-	&.search-is-visible {
-		&::before, &::after {
-			/* hide search icon */
-			opacity: 0;
-		}
+	@include MQ(L) {
+		font-size: 1.5rem;
 
-		span::before, span::after {
-			/* show close icon */
-			opacity: 1;
-		}
+		&.dropdown-is-active {
+			background-color: $color-2;
 
-		span::before {
-			@include transform(rotate(135deg));
-		}
+			.no-touch &:hover {
+				background-color: lighten($color-2, 5%);
+			}
 
-		span::after {
-			@include transform(rotate(45deg));
+			&::before, &::after {
+				/* transform the arrow into a 'X' */
+				width: 14px;
+			}
+
+			&::before {
+				/* transform the arrow into a 'X' */
+				@include transform(translateX(5px) rotate(-45deg));
+			}
+
+			&::after {
+				/* transform the arrow into a 'X' */
+				@include transform(rotate(45deg));
+			}
 		}
 	}
 }
 
-.cd-nav-trigger {
+.cd-dropdown h2, 
+.cd-dropdown-content a, 
+.cd-dropdown-content ul a {
+	height: 50px;
+	line-height: 50px;
 
-	span, span::before, span::after {
-		/* hamburger icon in CSS */
-		position: absolute;
-		display: inline-block;
-		height: 3px;
-		width: 24px;
-		background: $color-1;
+	@include MQ(M) {
+		height: 60px;
+		line-height: 60px;
 	}
 
-	span {
-		/* line in the center */
-		position: absolute;
-		top: 50%;
-		right: 10px;
-		margin-top: -2px;
-		@include transition(background .3s .3s);
+	@include MQ(L) {
+		height: 50px;
+		line-height: 50px;
+	}
+}
+
+.cd-dropdown h2, 
+.cd-dropdown-content a, 
+.cd-dropdown-content ul a,
+.cd-dropdown-content .cd-divider {
+	padding: 0 20px;
+}
+
+.cd-dropdown {
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: $color-1;
+	color: $color-3;
+	visibility: hidden;
+	
+	/* Force Hardware Acceleration */
+	@include backface-visibility(hidden);
+	@include transform(translateZ(0));
+
+	@include transform(translateY(-100%));
+	@include transition(transform .5s 0s, visibility 0s .5s);
+
+	h2 {
+		/* dropdown title - mobile version only */
+		position: relative;
+		z-index: 1;
+		color: tint($color-1, 30%);
+		background-color: $color-1;
+		border-bottom: 1px solid tint($color-1, 8%);
 	}
 
-	span::before, span::after {
-		/* other 2 lines */
-		content: '';
+	.cd-close {
+		/* 'X' close icon - mobile version only */
+		position: absolute;
+		z-index: 1;
 		right: 0;
-		/* Force Hardware Acceleration in WebKit */
-		@include transform(translateZ(0));
-		-webkit-backface-visibility: hidden;
-		backface-visibility: hidden;
-		@include transform-origin(0% 50%);
-		@include transition(transform .3s .3s);
-	}
+		top: 0;
+		height: 50px;
+		width: 50px;
 
-	span::before {
-		/* menu icon top line */
-		top: -6px;
-	}
+		/* image replacement */
+		overflow: hidden;
+		text-indent: 100%;
+		white-space: nowrap;
+		color: transparent;
 
-	span::after {
-		/* menu icon bottom line */
-		top: 6px;
-	}
-
-	&.nav-is-visible {
-		span {
-			/* hide line in the center */
-			background: rgba($color-1, 0);
+		&::after,
+		&::before {
+			/* this is the 'X' icon */
+			content: '';
+			position: absolute;
+			@include center;
+			height: 20px;
+			width: 2px;
+			background-color: $color-3;
 		}
 
-		span::before, span::after {
-			/* keep visible other 2 lines */
-			background: rgba($color-1, 1);
+		&::after {
+			@include transform(translateX(-50%) translateY(-50%) rotate(45deg));
 		}
 
-		span::before {
-			@include transform(translateX(4px) translateY(-3px) rotate(45deg));
+		&::before {
+			@include transform(translateX(-50%) translateY(-50%) rotate(-45deg));
 		}
 
-		span::after {
-			@include transform(translateX(4px) translateY(2px) rotate(-45deg));
+	}
+
+	&.dropdown-is-active {
+		visibility: visible;
+		@include transform(translateY(0));
+		@include transition(transform .5s 0s, visibility 0s 0s);
+	}
+
+	@include MQ(M) {
+
+		.cd-close {
+			top: 5px;
 		}
 	}
 
 	@include MQ(L) {
-		display: none;
+		position: absolute;
+		top: calc(100% - 2px);
+		/* reset style*/
+		height: auto;
+		width: auto;
+		@include transform(translateX(0));
+		background-color: $color-3;
+		color: $color-1;
+		box-shadow: 0 4px 12px rgba(#000, .1);
+		opacity: 0;
+		@include transform(translateY(30px));
+		@include transition(opacity 0.3s 0s, visibility 0s 0.3s, transform 0.3s 0s);
+
+		.open-to-left & {
+			/* use the .open-to-left class if you want to open the dropdown on the left */
+			right: 0;
+			left: auto;
+		}
+
+		h2, .cd-close {
+			/* on desktop - hide title and 'X' */
+			display: none;
+		}
+
+		&.dropdown-is-active {
+			opacity: 1;
+			@include transform(translateY(0));
+			@include transition(opacity 0.3s 0s, visibility 0.3s 0s, transform 0.3s 0s);
+		}
 	}
 }
 
-.cd-primary-nav, .cd-primary-nav ul {
-	position: fixed;
+.cd-dropdown-content, .cd-dropdown-content ul {
+	position: absolute;
 	top: 0;
-	right: 0;
+	left: 0;
+	width: 100%;
 	height: 100%;
-	width: $nav-width-S;
-	background: $color-1;
-	overflow: auto;
-	-webkit-overflow-scrolling: touch;
-	z-index: $below-content;
-	/* Force Hardware Acceleration in WebKit */
-	@include transform(translateZ(0));
-
-	@include transform(translateX(0));
-	@include transition(transform .3s);
+	overflow-x: hidden;
+	overflow-y: auto;
+	@include transition(transform 0.3s);
+	padding-top: 50px;
 
 	a {
 		display: block;
-		height: 50px;
-		line-height: 50px;
-		padding: 0 20px;
-		color: $color-4;
-		-webkit-font-smoothing: antialiased;
-  		-moz-osx-font-smoothing: grayscale;
+		color: $color-3;
+
+		/* truncate text with ellipsis if too long */
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
-		border-bottom: 1px solid lighten($color-1, 5%);
+		border-top-width: 1px;
+		border-color: tint($color-1, 8%);
+		border-style: solid;
+	}
+
+	li:first-of-type > a {
+		border-top-width: 0;
+	}
+
+	li:last-of-type > a {
+		border-bottom-width: 1px;
+	}
+
+	.cd-divider {
+		padding-top: 10px;
+		padding-bottom: 10px;
+		background-color: shade($color-1, 30%);
+		font-size: 1.1rem;
+		font-weight: bold;
+		letter-spacing: 1px;
+		color: tint($color-1, 30%);
+		text-transform: uppercase;
+	}
+
+	.cd-divider + li > a {
+		border-top-width: 0;
+	}
+
+	a, .cd-search, .cd-divider {
+		/* Force Hardware Acceleration */
 		@include transform(translateZ(0));
-		will-change: transform, opacity;
-		@include transition(transform .3s, opacity .3s);
+		@include backface-visibility(hidden);
+
+		@include transition(opacity .3s, transform .3s);
 	}
 
 	&.is-hidden {
-		/* secondary navigations hidden by default */
+		/* push the secondary dropdown items to the right */
 		@include transform(translateX(100%));
 	}
 
-	&.moves-out > li > a {
-		/* push the navigation items to the left - and lower down opacity - when secondary nav slides in */
-		@include transform(translateX(-100%));
+	&.is-hidden > li > a,
+	&.is-hidden > li > .cd-search,
+	&.is-hidden > .cd-divider, 
+	&.move-out > li > a,
+	&.move-out > li > .cd-search,
+	&.move-out > .cd-divider {
+		/* lower down the dropdown items opacity - when secondary dropdown slides in or for dropdown items hidden on the right */
 		opacity: 0;
 	}
-}
 
-@include MQ(maxL) {
-	.nav-on-left .cd-primary-nav, .nav-on-left .cd-primary-nav ul {
-		right: auto;
-		left: 0;
+	&.move-out > li > a,
+	&.move-out > li > .cd-search,
+	&.move-out > .cd-divider {
+		/* push the dropdown items to the left when secondary dropdown slides in */
+		@include transform(translateX(-100%));
+	}
+
+	.dropdown-is-active & {
+		-webkit-overflow-scrolling: touch;
+	}
+
+	@include MQ(M) {
+		padding-top: 60px;
+
+		a {
+			font-size: 1.8rem;
+		}
+	}
+
+	@include MQ(L) {
+		padding-top: 0;
+		overflow: visible;
+
+		a {
+			color: $color-1;
+			height: 50px;
+			line-height: 50px;
+			font-size: 1.5rem;
+			border-color: darken($color-3, 8%);
+		}
+
+		.cd-divider {
+			background-color: transparent;
+			color: darken($color-3, 30%);
+			border-top: 1px solid darken($color-3, 8%);
+		}
+
+		.cd-divider + li > a {
+			border-top-width: 1px;
+		}
+
+		&.is-hidden > li > a,
+		&.is-hidden > li > .cd-search,
+		&.is-hidden > .cd-divider, 
+		&.move-out > li > a,
+		&.move-out > li > .cd-search,
+		&.move-out > .cd-divider {
+			/* reset mobile style */
+			opacity: 1;
+		}
 	}
 }
 
-.cd-primary-nav {
+.cd-dropdown-content {
 
 	.see-all a {
-		/* different style for the See all button on mobile and tablet */
+		/* different style for the See all links */
 		color: $color-2;
 	}
 
-	.cd-nav-gallery .cd-nav-item, .cd-nav-icons .cd-nav-item {
+	.cd-dropdown-gallery .cd-dropdown-item, .cd-dropdown-icons .cd-dropdown-item {
 		/* items with picture (or icon) and title */
 		height: 80px;
 		line-height: 80px;
 
 		h3 {
+			/* truncate text with ellipsis if too long */
 			overflow: hidden;
 			text-overflow: ellipsis;
+			white-space: nowrap;
 		}
 	}
 
-	.cd-nav-gallery .cd-nav-item {
+	.cd-dropdown-gallery .cd-dropdown-item {
 		padding-left: 90px;
-
-		img {
-			position: absolute;
-			display: block;
-			height: 40px;
-			width: auto;
-			left: 20px;
-			top: 50%;
-			margin-top: -20px;
-		}
 	}
 
-	.cd-nav-icons .cd-nav-item {
+	.cd-dropdown-gallery img {
+		position: absolute;
+		display: block;
+		height: 40px;
+		width: auto;
+		left: 20px;
+		top: 50%;
+		margin-top: -20px;
+	}
+
+	.cd-dropdown-icons .cd-dropdown-item {
 		padding-left: 75px;
+		position: relative;
 
 		p {
 			color: $color-1;
@@ -441,313 +452,288 @@ Main components
 		}
 
 		&.item-1::before {
-			background-image: url('../img/line-icon-1.svg');
+			background-image: url('../img/nucleo-icon-1.svg');
 		}
 
 		&.item-2::before {
-			background-image: url('../img/line-icon-2.svg');
+			background-image: url('../img/nucleo-icon-2.svg');
 		}
 
 		&.item-3::before {
-			background-image: url('../img/line-icon-3.svg');
+			background-image: url('../img/nucleo-icon-3.svg');
 		}
 
 		&.item-4::before {
-			background-image: url('../img/line-icon-4.svg');
+			background-image: url('../img/nucleo-icon-4.svg');
 		}
 
 		&.item-5::before {
-			background-image: url('../img/line-icon-5.svg');
+			background-image: url('../img/nucleo-icon-5.svg');
 		}
 
 		&.item-6::before {
-			background-image: url('../img/line-icon-6.svg');
+			background-image: url('../img/nucleo-icon-6.svg');
 		}
 
 		&.item-7::before {
-			background-image: url('../img/line-icon-7.svg');
+			background-image: url('../img/nucleo-icon-7.svg');
 		}
 
 		&.item-8::before {
-			background-image: url('../img/line-icon-8.svg');
+			background-image: url('../img/nucleo-icon-8.svg');
+		}
+
+		&.item-9::before {
+			background-image: url('../img/nucleo-icon-9.svg');
+		}
+
+		&.item-10::before {
+			background-image: url('../img/nucleo-icon-10.svg');
+		}
+
+		&.item-11::before {
+			background-image: url('../img/nucleo-icon-11.svg');
+		}
+
+		&.item-12::before {
+			background-image: url('../img/nucleo-icon-12.svg');
 		}
 	}
 
-	@include MQ(maxL) {
-		/* by default .cd-primary-nav is hidden - trick for iOS devices where you can see the navigation if you pull down */
-		visibility: hidden;
-		@include transition(visibility 0s .3s);
-
-		&.nav-is-visible {
-			visibility: visible;
-			@include transition(visibility 0s 0s);
-		}
-	}
-}
-
-@include MQ(L) {
-
-	.cd-primary-nav {
+	@include MQ(L) {
+		/* reset mobile style */
 		position: static;
-		padding: 0 150px 0 0;
 		height: auto;
-		width: auto;
-		float: right;
-		overflow: visible;
-		background: transparent;
-		@include clearfix;
+		width: 280px;
 
-		&.moves-out > li > a {
+		> li:last-of-type a {
+			border-bottom: none;
+		}
+
+		.no-touch & > li:not(.has-children) a:hover {
+			color: $color-2;
+		}
+
+		&.move-out > li > a,
+		&.move-out > li > .cd-search,
+		&.move-out > .cd-divider {
 			/* reset mobile style */
 			@include transform(translateX(0));
 			opacity: 1;
 		}
 
-		ul {
-			position: static;
-			height: auto;
-			width: auto;
-			background: transparent;
-			overflow: visible;
-			z-index: $above-content;
-
-			&.is-hidden {
-				/* reset mobile style */
-				@include transform(translateX(0));
-			}
-
-			&.moves-out > li > a {
-				/* reset mobile style */
-				@include transform(translateX(0));
-				opacity: 1;
-			}
-		}
-
-		> li {
-			float: left;
-			margin-left: 3em;
-		}
-
-		> li > a {
-			/* main navigation buttons style */
-			position: relative;
-			display: inline-block;
-			height: $header-height-L;
-			line-height: $header-height-L;
-			padding: 0 10px;
-			color: $color-1;
-			overflow: visible;
-			border-bottom: none;
-			@include transition(color .3s, box-shadow .3s);
-
-			&:hover {
-				color: $color-2;
-			}
-
-			&.selected {
-				color: $color-2;
-				box-shadow: inset 0 -2px 0 $color-2;
-			}
-		}
-
-		.go-back, .see-all {
-			display: none;
-		}
-
-		.cd-secondary-nav, .cd-nav-gallery, .cd-nav-icons {
-			/* dropdown menu style */
-			position: absolute;
-			top: $header-height-L;
-			width: 100vw;
-			background: $color-4;
-			padding: 48px 64px 130px;
-			box-shadow: inset 0 1px 0 $color-3, 0 3px 6px rgba(#000, .05);
-			@include transform(translateX(0));
+		.cd-secondary-dropdown, .cd-dropdown-gallery, .cd-dropdown-icons  {
 			@include clearfix;
-			-webkit-transition: opacity .3s 0s, visibility 0s 0s;
-			-moz-transition: opacity .3s 0s, visibility 0s 0s;
-			transition: opacity .3s 0s, visibility 0s 0s;
+			@include transform(translateX(0));
+			left: 100%;
+			height: auto;
+			background-color: $color-3;
+			box-shadow: 0 2px 14px rgba(#000, .1);
+			
+			.open-to-left & {
+				/* use the .open-to-left class if you want to open the dropdown on the left */
+				left: auto;
+				right: 100%;
+			}
 
 			&.is-hidden {
-				opacity: 0;
-				visibility: hidden;
-				-webkit-transition: opacity .3s 0s, visibility 0s .3s;
-				-moz-transition: opacity .3s 0s, visibility 0s .3s;
-				transition: opacity .3s 0s, visibility 0s .3s;
+				/* reset mobile style */
+				@include transform(translateX(0));
+			}
+
+			&.fade-in {
+				/* animate secondary dropdown items when hovering over of of the .cd-dropdown-content list items */
+				@include animation(cd-fade-in .2s);
+			}
+
+			&.fade-out {
+				/* animate secondary dropdown items when hovering over of of the .cd-dropdown-content list items */
+				@include animation(cd-fade-out .2s);
+			}
+
+			> .go-back {
+				display: none;
 			}
 
 			> .see-all {
-				/* this is the BIG See all button at the bottom of the dropdown menu */
-				display: block;
 				position: absolute;
-				left: 0;
-				bottom: 0;
-				height: 80px;
-				width: 100%;
-				overflow: hidden;
-				/* reset some inherited style */
-				margin: 0;
-				padding: 0;
+				bottom: 20px;
+				height: 45px;
+				text-align: center;
 
 				a {
-					position: absolute;
-					width: 100%;
-					height: 100%;
-					top: 0;
-					left: 0;
-					font-size: 2.2rem;
-					font-weight: bold;
-					text-align: center;
-					line-height: 80px;
-					border-top: 1px solid $color-3;
-					/* reset some inherited style */
-					border-bottom: none;
 					margin: 0;
-					padding: 0;
-					@include transition(color .2s, background .2s, border .2s);
+					height: 100%;
+					line-height: 45px;
+					background: darken($color-3, 8%);
+					pointer-events: auto;
+					@include transition(color .2s, background-color .2s);
 
-					&:hover {
-						background: $color-1;
-						border-color: $color-1;
-						color: $color-4;
+					.no-touch &:hover {
+						color: $color-3;
+						background-color: $color-1;
 					}
 				}
 			}
+
+			.cd-dropdown-item, a {
+				border: none;
+			}
 		}
 
-		.cd-secondary-nav {
+		.cd-dropdown-gallery, .cd-dropdown-icons {
+			padding: 20px 30px 100px;
+
+			> .see-all {
+				width: calc(100% - 60px);
+			}
+		}
+
+		.cd-dropdown-icons > li, .cd-secondary-dropdown > li {
+			@include column(0.5);
+		}
+
+		.cd-secondary-dropdown {
+			overflow: hidden;
+			width: 550px;
+			padding-bottom: 65px;
+
+			&::before {
+				/* this is the separation line in the middle of the .cd-secondary-dropdown element */
+				position: absolute;
+				content: '';
+				top: 290px;
+				left: 15px;
+				height: 1px;
+				width: 520px;
+				background-color: darken($color-3, 8%);
+			}
+
+			> li > a {
+				color: $color-2;
+				font-size: 1.6rem;
+				margin-bottom: 10px;
+				line-height: 30px;
+				height: 30px;
+				pointer-events: none;
+
+				&::after, &::before {
+					/* hide the arrow */
+					display: none;
+				}
+			}
+
+			&.move-out > li > a {
+				/* reset mobile style */
+				@include transform(translateX(0));
+			}
 
 			> li {
-				/* change the height according to your needs - you can even set height: auto */
-				height: 340px;
-				/* here you set the number of columns - use width percentage */
-				@include column(.23); // see partials > _layout.scss
-				margin-right: 2.66%;
-				border-right: 1px solid $color-3;
-				overflow: hidden;
-				overflow-x: hidden;
-				overflow-y: auto;
-				-webkit-overflow-scrolling: touch;
+				margin: 20px 0;
+				border-right-width: 1px;
+				border-color: darken($color-3, 8%);
+				border-style: solid;
+				padding: 0 30px;
+				height: 250px;
+			}
 
-				&:nth-child(4n+2) {
-					/* +2 because we have 2 list items with display:none */
-					margin-right: 0;
-					border-right: none;
-				}
+			> li:nth-of-type(2n) {
+				border-right-width: 0; 
+			}
 
-				> a {
-					/* secondary nav title */
-					color: $color-2;
-					font-weight: bold;
-					font-size: 1.6rem;
-					margin-bottom: .6em;
+			> li > ul {
+				/* reset mobile style */
+				@include transform(translate(0));
+				position: relative;
+				height: auto;
+
+				> .go-back {
+					display: none;
 				}
 			}
 
 			a {
-				height: 30px;
-				line-height: 30px;
-				padding: 0 18% 0 0;
-				color: $color-1;
-				border-bottom: none;
-				font-size: 1.4rem;
+				line-height: 25px;
+				height: 25px;
+				font-size: 1.3rem;
+				padding-left: 0;
 
-				&:hover {
+				.no-touch &:hover {
 					color: $color-2;
 				}
 			}
 
 			ul {
-				/* Force Hardware Acceleration in WebKit */
-				@include transform(translateZ(0));
+				padding-bottom: 25px;
+				overflow: hidden;
+				height: auto;
 			}
 
-			ul ul {
-				/* tertiary navigation */
+			.go-back a {
+				padding-left: 20px;
+				color: transparent;
+
+				.no-touch &:hover {
+					color: transparent;
+				}
+
+				&::before, &::after {
+					left: 0
+				}
+			}
+
+			.see-all {
 				position: absolute;
-				top: 0;
+				bottom: 0;
 				left: 0;
-				height: 100%;
 				width: 100%;
-
-				&.is-hidden {
-					@include transform(translateX(100%));
-				}
-
-				.go-back {
-					display: block;
-
-					a {
-						color: transparent;
-					}
-				}
-
-				.see-all {
-					display: block;
-				}
-			}
-
-			.moves-out > li > a {
-				/* push the navigation items to the left - and lower down opacity - when tertiary nav slides in */
-				@include transform(translateX(-100%));
 			}
 		}
 
-		.cd-nav-gallery {
-			li {
-				/* set here number of columns - use width percentage */
-				@include column(.22);
-				margin: 0 4% 40px 0;
+		.cd-dropdown-gallery {
+			width: 600px;
+			padding-bottom: 100px;
 
-				&:nth-child(4n+2) {
-					/* +2 because we have two additional list items with display:none */
+			> li {
+				@include column(0.48);
+				margin-right: 4%;
+
+				&:nth-of-type(2n) {
 					margin-right: 0;
 				}
-			}
+			}	
 
-			.cd-nav-item {
-				border-bottom: none;
+			.cd-dropdown-item {
 				padding: 0;
 				height: auto;
-				line-height: 1.2;
+				line-height: normal;
+				color: $color-2;
+				margin-bottom: 2em;
+			}
 
-				img {
-					position: static;
-					margin-top: 0;
-					height: auto;
-					width: 100%;
-					margin-bottom: .6em;
-				}
+			> li:nth-last-of-type(2) a,
+			> li:last-of-type a {
+				margin-bottom: 0;
+			}
 
-				h3 {
-					color: $color-2;
-					font-weight: bold;
-					padding: 0 .4em;
-				}
+			img {
+				position: static;
+				height: auto;
+				width: 100%;
+				margin: 0 0 0.6em;
 			}
 		}
 
-		.cd-nav-icons {
-			li {
-				/* set here number of columns - use width percentage */
-				@include column(.32);
-				margin: 0 2% 20px 0;
+		.cd-dropdown-icons {
+			width: 600px;
 
-				&:nth-child(3n+2) {
-					/* +2 because we have two additional list items with display:none */
-					margin-right: 0;
-				}
-			}
-
-			.cd-nav-item {
-				border-bottom: none;
+			.cd-dropdown-item {
 				height: 80px;
 				line-height: 1.2;
 				padding: 24px 0 0 85px;
-				position: relative;
 
 				&:hover {
-					background: lighten($color-3, 8%);
+					background: darken($color-3, 8%);
 				}
 
 				h3 {
@@ -757,12 +743,99 @@ Main components
 
 				p {
 					display: block;
+					font-size: 1.2rem;
 				}
 
 				&::before {
 					left: 25px;
 				}
 			}
+		}
+
+		> .has-children > ul {
+			visibility: hidden;
+		}
+
+		> .has-children > ul.is-active {
+			/* when hover over .cd-dropdown-content items - show subnavigation */
+			visibility: visible;
+		}
+
+		> .has-children > .cd-secondary-dropdown.is-active > li > ul {
+			/* if .cd-secondary-dropdown is visible - show also subnavigation */
+			visibility: visible;
+		}
+
+		> .has-children > a.is-active {
+			/* hover effect for .cd-dropdown-content items with subnavigation */
+			box-shadow: inset 2px 0 0 $color-2;
+			color: $color-2;
+
+			&::before,
+			&::after {
+				background: $color-2;
+			}
+		}
+
+		.open-to-left & > .has-children > a.is-active {
+			box-shadow: inset -2px 0 0 $color-2;
+		}
+	}
+}
+
+@include keyframes(cd-fade-in) {
+	0% {
+		opacity: 0;
+		visibility: visible;
+	}
+
+	100% {
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+@include keyframes(cd-fade-out) {
+	0% {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	100% {
+		opacity: 0;
+		visibility: visible;
+	}
+}
+
+.cd-search input[type="search"] {
+	width: 100%;
+	height: 50px;
+	padding: 0 20px;
+	@include appearance(none);
+	background-color: tint($color-1, 8%);
+	color: $color-3;
+	border: none;
+	border-radius: 0;
+
+	@include placeholder {
+		color: $color-3;
+	}
+
+	&:focus {
+		background: $color-3;
+		color: $color-1;
+		outline: none;
+
+		@include placeholder {
+			color: rgba($color-1, .4);
+		}
+	}
+
+	@include MQ(L) {
+		background-color: darken($color-3, 8%);
+
+		@include placeholder {
+			color: darken($color-3, 30%);
 		}
 	}
 }
@@ -779,9 +852,8 @@ Main components
 		display: inline-block;
 		height: 2px;
 		width: 10px;
-		background: lighten($color-1, 10%);
-		-webkit-backface-visibility: hidden;
-		backface-visibility: hidden;
+		background: $color-3;
+		@include backface-visibility(hidden);
 	}
 
 	&::before {
@@ -793,12 +865,9 @@ Main components
 	}
 
 	@include MQ(L) {
-		&::before, &::after {
-			background: darken($color-3, 10%);
-		}
 
-		&:hover::before, &:hover::after {
-			background: $color-2;
+		&::before, &::after {
+			background: darken($color-3, 30%);
 		}
 	}
 }
@@ -813,7 +882,21 @@ Main components
 	}
 }
 
-.cd-primary-nav .go-back a {
+@include MQ(L) {
+	
+	.open-to-left .cd-dropdown-content > .has-children > a {
+		padding-left: 40px;
+		padding-right: 20px;
+
+		&::before, &::after {
+			right: auto;
+			left: 20px;
+			@include transform-origin(1px 50%);
+		}
+	}
+}
+
+.cd-dropdown-content .go-back a {
 	padding-left: 40px;
 
 	&::before, &::after {
@@ -823,195 +906,19 @@ Main components
 	}
 }
 
-@include MQ(L) {
-
-	.has-children > a {
-		&::before, &::after {
-			right: 15%;
-		}
-	}
-
-	.cd-primary-nav > .has-children > a {
-		/* main navigation arrows on larger devices */
-		padding-right: 30px !important;
-
-		&::before, &::after {
-			width: 9px;
-			@include transform-origin(50% 50%);
-			background: darken($color-3, 10%);
-			-webkit-backface-visibility: hidden;
-			backface-visibility: hidden;
-			@include transition(width .3s, transform .3s);
-		}
-
-		&::before {
-			right: 12px;
-		}
-
-		&::after {
-			right: 7px;
-		}
-
-		&.selected::before, &.selected::after {
-			width: 14px;
-		}
-
-		&.selected::before {
-			@include transform(translateX(5px) rotate(-45deg));
-		}
-
-		&.selected::after {
-			@include transform(rotate(45deg));
-		}
-	} 
-
-	.cd-secondary-nav > .has-children > a::before, .cd-secondary-nav > .has-children > a::after {
-		/* remove arrows on secondary nav titles */
-		display: none;
-	}
-
-	.cd-primary-nav .go-back a {
-		padding-left: 20px;
-
-		&::before, &::after {
-			left: 1px;
-		}
-	}
+.cd-main-content {
+	background-color: darken($color-3, 10%);
+	min-height: calc(100vh - 100px);
+	padding: 2em 5%;
+	line-height: 2;
 }
 
-.cd-search {
-	position: absolute;
-	height: $search-height-S;
-	width: 100%;
-	top: $header-height-S;
-	left: 0;
-	z-index: $above-content;
-	opacity: 0;
-	visibility: hidden;
-	-webkit-transition: opacity .3s 0s, visibility 0s .3s;
-	-moz-transition: opacity .3s 0s, visibility 0s .3s;
-	transition: opacity .3s 0s, visibility 0s .3s;
-
-	form {
-		height: 100%;
-		width: 100%;
-	}
-
-	input {
-		border-radius: 0;
-		border: none;
-		background: $color-4;
-		height: 100%;
-		width: 100%;
-		padding: 0 5%;
-		box-shadow: inset 0 1px 0 $color-3, 0 3px 6px rgba(#000, .05);
-		@include appearance(none);
-
-		@include placeholder {
-			color: darken($color-3, 10%);
-		}
-
-		&:focus {
-			outline: none;
-		}
-	}
-
-	&.is-visible {
-		opacity: 1;
-		visibility: visible;
-		-webkit-transition: opacity .3s 0s, visibility 0s 0s;
-		-moz-transition: opacity .3s 0s, visibility 0s 0s;
-		transition: opacity .3s 0s, visibility 0s 0s;
-	}
-
-	.nav-is-fixed & {
-		position: fixed;
-	}
-
-	@include MQ(L) {
-		height: $search-height-L;
-		top: $header-height-L;
-
-		input {
-			padding: 0 2em;
-			font-size: 3.2rem;
-			font-weight: 300;
-
-			@include placeholder {
-				
-			}
-		}
-	}
-}
-
-.cd-overlay {
-	/* shadow layer visible when navigation is active */
-	position: fixed;
-	z-index: 2;
-	height: 100%;
-	width: 100%;
-	top: 0;
-	left: 0;
-	cursor: pointer;
-	background-color: rgba($color-2, .8);
-	visibility: hidden;
-	opacity: 0;
-	@include backface-visibility(hidden);
-	@include transition(opacity .3s 0s, visibility 0s .3s, transform .3s 0s);
-	
-	&.is-visible {
-		opacity: 1;
-		visibility: visible;
-		@include transition(opacity .3s 0s, visibility 0s 0s, transform .3s 0s);
-	}
-
-	@include MQ(maxL) {
-		&.is-visible {
-			@include transform(translateX(-$nav-width-S));
-		}
-		.nav-on-left &.is-visible {
-			@include transform(translateX($nav-width-S));
-		}
-		&.is-visible.search-is-visible, .nav-on-left &.is-visible.search-is-visible {
-			@include transform(translateX(0));
-		}
-	}
-}
-
-/* -------------------------------- 
-
-support for no js 
-
--------------------------------- */
-
-.no-js .cd-primary-nav {
-	position: relative;
-	height: auto;
-	width: 100%;
-	overflow: visible;
+.no-js .cd-dropdown-wrapper:hover .cd-dropdown {
 	visibility: visible;
-	z-index: $content;
-}
-
-.no-js .cd-search {
-	position: relative;
-	top: 0;
 	opacity: 1;
-	visibility: visible;
+	@include transform(translateY(0));
 }
 
-@include MQ(L) {
-	.no-js .cd-primary-nav {
-		position: absolute;
-		z-index: $above-content;
-		display: inline-block;
-		width: auto;
-		top: 0;
-		right: 150px;
-		padding: 0;
-	}
-
-	.no-js .nav-is-fixed .cd-primary-nav {
-		position: fixed;
-	}
+.no-js .cd-dropdown-wrapper .cd-close {
+	display: none;
 }

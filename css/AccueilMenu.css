@@ -9,6 +9,7 @@
     border-bottom: solid;
     border-width: 1px;
     border-color: black;
+    box-sizing: content-box;
 }
 
 
@@ -58,6 +59,7 @@
     margin-left: 765px;
     display: inline-block;
     position: absolute;
+
 }
 
 

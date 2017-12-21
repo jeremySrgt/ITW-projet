@@ -295,6 +295,7 @@ xheader
   color: #FFF;
     text-align: center;
     text-decoration: none;
+    box-sizing: content-box;
 }
 
 
@@ -311,6 +312,7 @@ xheader
     background: #EEA200;
     color: #FFF;
     text-decoration: none;
+    box-sizing: content-box;
 }
 
 #cd-cart .cd-go-to-cart:hover{

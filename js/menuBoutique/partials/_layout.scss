@@ -2,8 +2,7 @@
    
 $S:     480px;   
 $M:     768px;     
-$L:     1170px;
-$maxL:    $L - 1px;     
+$L:     1024px;     
 
 // media queries
 
@@ -16,9 +15,6 @@ $maxL:    $L - 1px;
   }
   @else if $canvas == L {
    @media only screen and (min-width: $L) { @content; } 
-  }
-  @else if $canvas == maxL {
-   @media only screen and (max-width: $maxL) { @content; } 
   }
 }
 
