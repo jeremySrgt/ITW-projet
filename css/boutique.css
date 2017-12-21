@@ -1,9 +1,17 @@
 
-#block_generale{
+#block_articles{
     width:  1200px;
-    background-color: white;
+    background-color: red;
     height: 800px;
     margin-top: 90px;
     display: inline-block;
 
+}
+
+.sous_menu_articles{
+    background-color: green;
+    width: 1200px;
+    height: 160px;
+    display: inline-block;
+    margin-top: 7px;
 }

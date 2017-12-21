@@ -5,14 +5,13 @@
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/AccueilMenu.css">
     <link href="../css/iHover.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../js/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="../js/slick/slick-theme.css"/>
     <link rel="stylesheet" type="text/css" href="../js/searchBox/searchCSS.css"/>
     <link rel="stylesheet" type="text/css" href="../js/side-shopping-cart/css/style.css">
     <link href="../js/sharePlugin/cool-share/plugin.css" media="all" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="../js/badgeCount/BadgeCss.css">
     <link rel="stylesheet" type="text/css" href="../css/boutique.css">
-    <link rel="stylesheet" type="text/css" href="../js/sideBar/jquery.multilevelpushmenu.css" />
+    <link rel="stylesheet" type="text/css" href="../js/menuBoutique/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../js/menuBoutique/css/reset.css" />
 
 
     <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
@@ -29,7 +28,8 @@
     <script src="../js/sharePlugin/js/demo.js"></script>
     <script src="../js/add_remove_from_cart/simpleCart.js"></script>
     <script src="../js/badgeCount/Counting.js"></script>
-    <script src="../js/sideBar/jquery.multilevelpushmenu.js"></script>
+    <script src="../js/menuBoutique/js/main.js"></script>
+    <script src="../js/menuBoutique/js/jquery.mobile.custom.min.js"></script>
 
 
 
@@ -38,7 +38,7 @@
 
     <title>SY SportsWear Officiel</title>
 </head>
-<body>
+<body >
 <div id="global">
     <div class="menu">
         <div class="caselogo"></div>
@@ -82,137 +82,76 @@
                 <p class="cd-go-to-cart"><a href="#0">Voir le panier</a></p>
             </div>
         </div>
+        <div class="sous_menu_articles">
+
+            <header class="cd-main-header">
+
+                <ul class="cd-header-buttons">
+                    <li><a class="cd-search-trigger" href="#cd-search">Search<span></span></a></li>
+                    <li><a class="cd-nav-trigger" href="#cd-primary-nav">Menu<span></span></a></li>
+                </ul> <!-- cd-header-buttons -->
+
+            </header>
+            <nav class="cd-nav">
+                <ul id="cd-primary-nav" class="cd-primary-nav is-fixed">
+                    <li class="has-children">
+                        <a href="#0">Clothing</a>
+
+                        <ul class="cd-secondary-nav is-hidden">
+                            <li class="go-back"><a href="#0">Menu</a></li>
+                            <li class="see-all"><a href="#0">All Clothing</a></li>
+                            <li class="has-children">
+                                <a href="#0">Accessories</a>
+
+                                <ul class="is-hidden">
+                                    <li class="go-back"><a href="#0">Clothing</a></li>
+                                    <li class="see-all"><a href="#0">All Accessories</a></li>
+                                    <li class="has-children">
+                                        <a href="#0">Beanies</a>
+
+                                        <ul class="is-hidden">
+                                            <li class="go-back"><a href="#0">Accessories</a></li>
+                                            <li class="see-all"><a href="#0">All Benies</a></li>
+                                            <li><a href="#0">Caps</a></li>
+                                            <li><a href="#0">Gifts</a></li>
+                                            <li><a href="#0">Scarves</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><!-- ... --></li>
+                                </ul>
+                            </li>
+
+                            <li><!-- ... --></li>
+                            <li><!-- ... --></li>
+                            <li><!-- ... --></li>
+                        </ul>
+                    </li>
+
+                    <li class="has-children">
+                        <!-- ... -->
+                    </li>
+
+                    <li class="has-children">
+                        <!-- ... -->
+                    </li>
+
+                    <li><a href="#0">Standard</a></li>
+                </ul> <!-- primary-nav -->
+            </nav> <!-- cd-nav -->
+
+
+
+            <div id="cd-search" class="cd-search">
+                <form>
+                    <input type="search" placeholder="Search...">
+                </form>
+            </div>
+
+        </div>
 
     </div>
-    <div id="block_generale">
-        <div id="menu">
-            <nav>
-                <h2><i class="fa fa-reorder"></i>Tous les articles</h2>
-                <ul>
-                    <li>
-                        <a href="#"><i class="fa fa-male"></i>Homme</a> <!-- premier menu-->
-                        <h2><i class="fa fa-male"></i>Homme</h2>
-                        <ul>
-                            <li>
-                                <a href="#"><i class="fa fa-male"></i>juste au corps</a> <!--sous menu-->
-                                <h2><i class="fa fa-male"></i>Juste au corps</h2>
-                                <ul>
-                                    <li>
-                                        <a href="#">Haut dynamique</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Haut anti transpiration</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Haut performance</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">T-shirt respirant</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-male"></i>Pantalon</a> <!--sous menu-->
-                                <h2><i class="fa fa-male"></i>Pantalon</h2>
-                                <ul>
-                                    <li>
-                                        <a href="#">Pantalon dynamique</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">autre produit</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">autre produit</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">autre produit</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-male"></i>Veste de sport</a> <!--sous menu-->
-                                <h2><i class="fa fa-male"></i>Veste de sport</h2>
-                                <ul>
-                                    <li>
-                                        <a href="#">autre produit</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">autre produit</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">autre produit</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">autre produit</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-female"></i>Femme</a> <!-- premier menu-->
-                        <h2><i class="fa fa-female"></i>Femme</h2>
-                        <ul>
-                            <li>
-                                <a href="#"><i class="fa fa-phone"></i>juste au corps</a> <!--sous menu-->
-                                <h2><i class="fa fa-phone"></i>Juste au corps</h2>
-                                <ul>
-                                    <li>
-                                        <a href="#">Haut dynamique</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Haut anti transpiration</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Haut performance</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">T-shirt respirant</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-desktop"></i>Pantalon</a> <!--sous menu-->
-                                <h2><i class="fa fa-desktop"></i>Pantalon</h2>
-                                <ul>
-                                    <li>
-                                        <a href="#">Pantalon dynamique</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">autre produit</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">autre produit</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">autre produit</a>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-camera-retro"></i>Veste de sport</a> <!--sous menu-->
-                                <h2><i class="fa fa-camera-retro"></i>Veste de sport</h2>
-                                <ul>
-                                    <li>
-                                        <a href="#">autre produit</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">autre produit</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">autre produit</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">autre produit</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
 
-                </ul>
-            </nav>
-        </div>
+    <div id="block_articles">
     </div>
 
 
@@ -237,11 +176,7 @@
         </div>
     </div>
 
-    <script>
-        $(document).ready(function(){
-            $('#menu').multilevelpushmenu();
-        });
-    </script>
+
     <script  type="text/javascript">
         $('.blockpanier').badge(22,'top')
 
