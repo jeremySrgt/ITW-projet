@@ -17,16 +17,24 @@
 .caselogo{
     margin-left: 10px;
     display: inline-block;
-    width: 60px;
-    margin-top: 10px;
-    height: 60px;
-    background-color : red;
-    background-image: url("../img/logo60x60.PNG");
+    width: 70px;
+    height: 70px;
+    background-color : white;
     text-align: center;
+
+    position: relative;
     /* case carré du logo de la barre menu.*/
 }
 
+.imagelogo{
+    background-repeat : no-repeat;
+    display: inline-block;
+    height :70px;
+    width :70px;
+    background-image:url(../img/logojoli85.png);
 
+
+}
 
 .blockmenu{
     margin-left: 100px;
