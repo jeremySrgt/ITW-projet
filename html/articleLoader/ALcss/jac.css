@@ -7,14 +7,14 @@ body{
     margin-left: auto;
     margin-right: auto;
     width: 1200px;
-    height:800px;
+    height:1000px;
     display: inline-block;
 }
 
 .affichage_article{
     background-color: yellow;
     width: 1200px;
-    height: 800px;
+    height: 1000px;
     display: inline-block;
 }
 
@@ -25,6 +25,4 @@ body{
     margin-left: 75px;
     display: inline-block;
 }
-p:hover{
-    color: red;
-}
+

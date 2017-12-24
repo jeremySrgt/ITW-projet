@@ -2,7 +2,7 @@
 #block_articles{
     width:  1200px;
     background-color: red;
-    height: 800px;
+    height: 1100px;
     margin-top: 90px;
     display: inline-block;
 
@@ -17,7 +17,7 @@
 }
 .menu_article{
     width: 1200px;
-    height: 800px;
+    height: 1100px;
     margin-top: 20px;
     background-color: red;
 }
@@ -25,10 +25,10 @@
 #dynamic{
     background-color: #00acee;
     width:1200px;
-    height: 800px;
+    height: 1100px;
 }
 object{ /*la taille de l'html qui va être intégrer dans boutique.html via ajax*/
     width: 1200px;
-    height: 800px;
+    height: 1100px;
     background-color: purple;
 }
