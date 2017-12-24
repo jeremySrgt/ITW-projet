@@ -359,7 +359,7 @@
 
         </div>
     <div class="menu_article">
-        <section id="dynamic"><p></p></section>
+        <div id="dynamic"><!-- l'html des articles selectionner va etre integrer ici via ajax--></div>
 
     </div>
 
@@ -394,11 +394,21 @@
     </script>
 
 </div>
-<script>
+<!--<script>
     $(document).ready(function(){
         $('a.ajax-fonction').click(function(e){
             e.preventDefault();
             $("#dynamic").load($(this).attr('href'));
+        });
+    });
+
+</script>-->
+<script>
+    $(document).ready(function(){
+        $('a.ajax-fonction').click(function(e){
+            e.preventDefault();
+            var ref = $(this).attr('href'); //ce qui est dans le href de la categorie d'article en question
+            $("#dynamic").html('<object data="' + ref + '">');
         });
     });
 
