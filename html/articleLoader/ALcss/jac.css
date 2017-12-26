@@ -12,7 +12,7 @@ body{
 }
 
 .affichage_article{
-    background-color: yellow;
+    background-color: #f2f2f2;
     width: 1200px;
     height: 1000px;
     display: inline-block;
