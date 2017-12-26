@@ -715,7 +715,7 @@ header {
     padding: 24px 0 0 85px;
   }
   .cd-dropdown-content .cd-dropdown-icons .cd-dropdown-item:hover {
-    background: #ebebeb;
+      /* permet d'avoir une couleur de survol sur les articles de la categorie "autres"*/
   }
   .cd-dropdown-content .cd-dropdown-icons .cd-dropdown-item h3 {
     color: #3f8654;
