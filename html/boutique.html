@@ -263,7 +263,10 @@
         </div>
 
     <div class="block_articles">
-        <div id="dynamic"><!-- l'html des articles selectionner va etre integrer ici via ajax--></div>
+        <div id="dynamic">
+            <div id="PageDefaultBoutique"></div>
+            <!-- l'html des articles selectionner va etre integrer ici via ajax-->
+        </div>
     </div>
 
 
@@ -294,6 +297,10 @@
     </script>
 
 </div>
+
+<script>
+    $("#PageDefaultBoutique").html('<object data="articleLoader/ALhtml/PageDefaultBoutique.html">');
+</script>
 
 <script>
     $(document).ready(function(){
