@@ -7,9 +7,11 @@
     <link rel="stylesheet" href="../../../js/article_categorie_boutique/css/style.css">
     <link rel="stylesheet" href="../../../js/article_categorie_boutique/css/reset.css">
     <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../../../js/loading_state/css/easy-loading.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="../../../js/article_categorie_boutique/js/modernizr.js"></script>
+    <script src="../../../js/loading_state/js/easy-loading.js"></script>
 </head>
 <body>
 <div id="global">
@@ -289,6 +291,14 @@
 
     </div>
 </div>
+<script>
+    EasyLoading.show({
+        timeout: 1000,
+        type: EasyLoading.TYPE.BALL_SCALE_RIPPLE_MULTIPLE,
+        text:"Chargement"
+    });
+
+</script>
 <script type="text/javascript" src="../../../js/article_categorie_boutique/js/main.js"></script>
 </body>
 </html>
