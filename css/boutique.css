@@ -1,21 +1,13 @@
 
-#block_articles{
-    width:  1200px;
-    background-color: red;
-    height: 1100px;
-    margin-top: 90px;
-    display: inline-block;
 
-}
-
-.block_container{
-    background-color: green;
+.block_menu{
+    background-color: white;
     width: 1200px;
-    height: 90px;
+    height: 85px;
     margin-top: 80px;
     display: inline-block;
 }
-.menu_article{
+.block_articles{
     width: 1200px;
     height: 1100px;
     margin-top: 20px;
@@ -23,12 +15,12 @@
 }
 
 #dynamic{
-    background-color: #00acee;
+    background-color: white;
     width:1200px;
     height: 1100px;
 }
 object{ /*la taille de l'html qui va être intégrer dans boutique.html via ajax*/
     width: 1200px;
     height: 1100px;
-    background-color: #800080;
+    background-color: white; /*si le fond n'est pas blanc lors du chargement de la page externe la couleur va brièvement apparaitre*/
 }
