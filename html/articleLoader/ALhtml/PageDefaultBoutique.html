@@ -12,6 +12,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="../../../js/article_categorie_boutique/js/modernizr.js"></script>
     <script src="../../../js/loading_state/js/easy-loading.js"></script>
+    <script src="../../../js/add_remove_from_cart/simpleCart.js"></script>
+
 </head>
 <body>
 <div id="global">
@@ -90,8 +92,8 @@
                             </ul>
                         </div>-->
 
-                        <button class="add-to-cart">
-                            <em>Ajouter</em>
+                        <button class="add-to-cart simpleCart_shelfItem">
+                            <a href="javascript:" onclick="simpleCart.add({name:'TEST PANIER BOUTIQUE', price: 67.00});" ><em>Ajouter</em></a>
                             <svg x="0px" y="0px" width="32px" height="32px" viewBox="0 0 32 32">
                                 <path stroke-dasharray="19.79 19.79" stroke-dashoffset="19.79" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" d="M9,17l3.9,3.9c0.1,0.1,0.2,0.1,0.3,0L23,11"/>
                             </svg>
@@ -102,7 +104,7 @@
                 </div> <!-- .cd-single-item -->
 
                 <div class="cd-item-info">
-                    <b><a href="#0">juste au corps</a></b>
+                    <b><a href="#0">TEST PANIER BOUTIQUE</a></b>
                     <em>67,00€</em>
                 </div> <!-- cd-item-info -->
             </li>
@@ -299,6 +301,7 @@
     });
 
 </script>
+
 <script type="text/javascript" src="../../../js/article_categorie_boutique/js/main.js"></script>
 </body>
 </html>

@@ -19,7 +19,7 @@ body {
 }
 
 a {
-  color: #de5b48;
+  color: white; /*initialement a #de5b48*/
   text-decoration: none;
 }
 
