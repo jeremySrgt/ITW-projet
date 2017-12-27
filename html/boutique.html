@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../js/menuBoutique/css/style.css">
     <link rel="stylesheet" type="text/css" href="../js/menuBoutique/css/reset.css">
     <link rel="stylesheet" type="text/css" href="../js/HoverLogo/HoverLogo.css">
+    <link rel="stylesheet" type="text/css" href="../js/LoadTransition/css/LoadTransition.css">
 
 
     <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
@@ -38,7 +39,9 @@
     <title>SY SportsWear Officiel</title>
 </head>
 <body >
-<div id="global">
+<script>document.body.className += ' fade-out';</script>
+
+<div id="global" data-transition='split_vertical'>
     <div class="menu">
 
         <div class="caselogo">
@@ -326,7 +329,13 @@
 <script src="../js/menuBoutique/js/main.js"></script>
 <script src="../js/menuBoutique/js/jquery.menu-aim.js"></script>
 
+<script>
+    $(function() {
+        $('body').removeClass('fade-out');
+    });
+</script>
 </body>
+
 
 
 </html>

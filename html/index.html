@@ -12,6 +12,7 @@
     <link href="../js/sharePlugin/cool-share/plugin.css" media="all" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="../js/badgeCount/BadgeCss.css">
     <link rel="stylesheet" type="text/css" href="../js/HoverLogo/HoverLogo.css">
+    <link rel="stylesheet" type="text/css" href="../js/LoadTransition/css/LoadTransition.css">
 
 
     <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
@@ -33,11 +34,11 @@
     <!-- Demo page source -->
 
 
-
-
     <title>SY SportsWear Officiel</title>
 </head>
 <body>
+<script>document.body.className += ' fade-out';</script>
+
     <div id="global">
         <div class="menu">
             <div class="caselogo">
@@ -212,7 +213,11 @@
 
         </script>
     </div>
-
+<script>
+    $(function() {
+    $('body').removeClass('fade-out');
+    });
+</script>
 </body>
 
 

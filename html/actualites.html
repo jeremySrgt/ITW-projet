@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../js/badgeCount/BadgeCss.css">
     <link rel="stylesheet" type="text/css" href="../css/actualite.css">
     <link rel="stylesheet" type="text/css" href="../js/HoverLogo/HoverLogo.css">
-
+    <link rel="stylesheet" type="text/css" href="../js/LoadTransition/css/LoadTransition.css">
 
     <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
@@ -32,7 +32,6 @@
 
 
 
-
     <!-- Demo page source -->
 
 
@@ -41,6 +40,9 @@
     <title>SY SportsWear Officiel</title>
 </head>
 <body>
+
+<script>document.body.className += ' fade-out';</script>
+
 <div id="global">
     <div class="menu">
         <div class="caselogo">
@@ -191,6 +193,11 @@ $(document).ready(function(){
 
 </script>
 
+<script>
+    $(function() {
+        $('body').removeClass('fade-out');
+    });
+</script>
 
 </body>
 
