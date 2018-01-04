@@ -1,6 +1,6 @@
 
 .article_preview{
-    background-color: grey;
+    background-color: white;
     display: inline-block;
     margin-top: 150px;
     width: 1200px;
@@ -9,7 +9,7 @@
 
 .article_photo{
     background-color: black;
-    margin-top: 150px;
+    margin-top: 50px;
     margin-left: 75px;
     width: 500px;
     height: 500px;
@@ -18,14 +18,16 @@
 }
 
 .article_desc{
-    background-color: brown;
-    margin-top: 150px;
+    background-color: white;
+    margin-top: 50px;
     margin-left: 55px;
-    height: 500px;
+    height: 360px;
     width: 500px;
     display: inline-block;
     position: absolute;
     font-family: 'Rubik', sans-serif;
+    border-left: black;
+    border-left: solid;
 }
 
 .article_titre{
@@ -52,7 +54,7 @@
 }
 
 .article_custom{
-    background-color: orange;
+    background-color: white;
     margin-top: 20px;
     margin-left: 50px;
     width: 400px;
@@ -61,7 +63,7 @@
 
 }
 .taille{
-    background-color: yellow;
+    background-color: white;
     margin-top: 20px;
     width: 175px;
     height: 100px;
@@ -69,7 +71,7 @@
 }
 
 .qte{
-    background-color: yellow;
+    background-color: white;
     margin-top: 20px;
     margin-left: 20px;
     width: 195px;
@@ -100,22 +102,15 @@
     background: #eebb4d;
 }
 
-
-.article_mail{
-    background-color: orange;
-    margin-top: 20px;
-    margin-left: 50px;
-    width: 400px;
-    height: 110px;
-}
-
 .signup{
-    background-color: dodgerblue;
+    background-color: white;
     width: 500px;
     height: 300px;
     display: inline-block;
-    margin-top: 650px;
+    margin-top: 410px;
     margin-left: 55px;
     position: absolute;
+    border-left: black;
+    border-left: solid;
 }
 
