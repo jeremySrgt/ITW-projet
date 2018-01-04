@@ -4,7 +4,7 @@
     display: inline-block;
     margin-top: 150px;
     width: 1200px;
-    height: 800px;
+    height: 1000px;
 }
 
 .article_photo{
@@ -53,7 +53,7 @@
 
 .article_custom{
     background-color: orange;
-    margin-top: 50px;
+    margin-top: 20px;
     margin-left: 50px;
     width: 400px;
     height: 150px;
@@ -106,6 +106,16 @@
     margin-top: 20px;
     margin-left: 50px;
     width: 400px;
-    height: 90px;
+    height: 110px;
+}
+
+.signup{
+    background-color: dodgerblue;
+    width: 500px;
+    height: 300px;
+    display: inline-block;
+    margin-top: 650px;
+    margin-left: 55px;
+    position: absolute;
 }
 

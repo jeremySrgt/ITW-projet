@@ -6,18 +6,15 @@
     <link rel="stylesheet" href="../../../css/AccueilMenu.css">
     <link rel="stylesheet" href="../APcss/APcss.css">
     <link href="../../../css/iHover.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../../../js/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="../../../js/slick/slick-theme.css"/>
     <link rel="stylesheet" type="text/css" href="../../../js/searchBox/searchCSS.css"/>
     <link rel="stylesheet" type="text/css" href="../../../js/side-shopping-cart/css/style.css">
     <link href="../../../js/sharePlugin/cool-share/plugin.css" media="all" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="../../../js/badgeCount/BadgeCss.css">
-    <link rel="stylesheet" type="text/css" href="../../../css/actualite.css">
     <link rel="stylesheet" type="text/css" href="../../../js/HoverLogo/HoverLogo.css">
     <link rel="stylesheet" type="text/css" href="../../../js/LoadTransition/css/LoadTransition.css">
     <link rel="stylesheet" type="text/css" href="../../../js/Selector/css/nice-select.css">
     <link rel="stylesheet" type="text/css" href="../../../js/NiceQte/bars-1to10.css">
-    <link rel="stylesheet" type="text/css" href="../../../js/email_prix/email.css">
+    <link rel="stylesheet" type="text/css" href="../../../js/email_prix/css/style.css">
 
     <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
@@ -36,6 +33,7 @@
     <script src="../../../js/ZoomPlugin/jquery.elevatezoom.js"></script>
     <script src="../../../js/Selector/js/jquery.nice-select.js"></script>
     <script src="../../../js/NiceQte/jquery.barrating.min.js"></script>
+
 
 
 
@@ -134,30 +132,46 @@
                         <option value="3">3</option>
                         <option value="4">4</option>
                         <option value="5">5</option>
-                        <option value="5">6</option>
-                        <option value="5">7</option>
-                        <option value="5">8</option>
-                        <option value="5">9</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
                     </select>
                 </div>
             </div>
-
             <div class="article_ajout">
                 <a class="ajout" href="#1">Ajouter au panier</a>
             </div>
-            <div class="centerMe">
-                <div class='cta'>
-                    <span>email</span>
-                    <form>
-                        <div class='input'>
-                            <input placeholder='E-mail'>
-                        </div>
-                        <div class='button'>
-                            <button disabled='disabled' type='submit'>Send</button>
-                        </div>
-                    </form>
-                </div>
+            <div class="article_mail">
+
             </div>
+        </div>
+
+        <div class="signup">
+            <div class="registration-form">
+                <header>
+                    <h1>Sign Upp</h1>
+                    <p>Fill in all informations</p>
+                </header>
+                <form>
+                    <div class="input-section email-section">
+                        <input class="email" type="email" placeholder="ENTER YOUR E-MAIL HERE" autocomplete="off"/>
+                        <div class="animated-button"><span class="icon-paper-plane"><i class="fa fa-envelope-o"></i></span><span class="next-button email"><i class="fa fa-arrow-up"></i></span></div>
+                    </div>
+                    <div class="input-section password-section folded">
+                        <input class="password" type="password" placeholder="ENTER YOUR PASSWORD HERE"/>
+                        <div class="animated-button"><span class="icon-lock"><i class="fa fa-lock"></i></span><span class="next-button password"><i class="fa fa-arrow-up"></i></span></div>
+                    </div>
+                    <div class="input-section repeat-password-section folded">
+                        <input class="repeat-password" type="password" placeholder="REPEAT YOUR PASSWORD HERE"/>
+                        <div class="animated-button"><span class="icon-repeat-lock"><i class="fa fa-lock"></i></span><span class="next-button repeat-password"><i class="fa fa-paper-plane"></i></span></div>
+                    </div>
+                    <div class="success">
+                        <p>ACCOUNT CREATED</p>
+                    </div>
+                </form>
+            </div>
+
         </div>
 
     </div>
@@ -192,13 +206,14 @@
     </script>
 </div>
 
+<script src="../../../js/email_prix/js/index.js"></script>
+
 <script>
     $(function() {
         $('body').removeClass('fade-out');
     });
 </script>
 
-<script src="../../../js/email_prix/emailJS.js"></script>
 
 <script>
     $("#zoom_01").elevateZoom();
