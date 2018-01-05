@@ -98,19 +98,19 @@ body{
 
 
 .bas_page{
-    background-color: darkgrey;
+    background-image: linear-gradient(white, #bcbcbc);
     margin-top: 70px;
     bottom:0;
     width: 1200px;
-    height: 200px;
+    height: 250px;
     display: inline-block;
 }
 #social{
-    background-color: darkgrey;
+    background-color: transparent;
     width: 200px;
     height: 100px;
     display: inline-block;
-    margin-top: 10px;
+    margin-top: 30px;
     margin-left: 50px;
     text-align: center;
     font-family: 'Rubik', sans-serif;
@@ -118,10 +118,10 @@ body{
 }
 
 #credit{
-    background-color: darkgrey;
+    background-color: transparent;
     width: 300px;
     height: 160px;
-    margin-top: 10px;
+    margin-top: 30px;
     margin-left: 130px;
     display: inline-block;
     color: black;
@@ -132,9 +132,9 @@ body{
 
 
 #contact{
-    background-color: darkgrey;
+    background-color: transparent;
     margin-left: 450px;
-    margin-top: 10px;
+    margin-top: 30px;
     width: 300px;
     height: 160px;
     font-family: 'Rubik', sans-serif;
