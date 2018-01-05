@@ -2,7 +2,7 @@
 .article_preview{
     background-color: white;
     display: inline-block;
-    margin-top: 150px;
+    margin-top: 0px;
     width: 1200px;
     height: 800px;
 }
@@ -15,6 +15,27 @@
     height: 500px;
     display: inline-block;
 
+}
+
+.suggestion{
+    position: absolute;
+    background-color: white;
+    width: 500px;
+    height: 155px;
+    margin-left: 75px;
+    margin-top: 10px;
+    border-top: 2px solid black;
+    font-family: 'Rubik', sans-serif;
+}
+.suggestion h3{
+    text-align: center;
+}
+.suggestion p{
+    text-align: center;
+}
+.suggestion a{
+    text-decoration: none;
+    color: black;
 }
 
 .article_desc{
@@ -73,8 +94,8 @@
 .qte{
     background-color: white;
     margin-top: 20px;
-    margin-left: 20px;
-    width: 195px;
+    margin-left: 35px;
+    width: 180px;
     height: 100px;
     display: inline-block;
 }
