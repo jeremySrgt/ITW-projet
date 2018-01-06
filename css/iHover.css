@@ -94,6 +94,7 @@ RawBlameHistory
     text-align: center;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    font-family: 'Rubik', sans-serif;
 }
 
 .ih-item.circle.effect1 .spinner {
