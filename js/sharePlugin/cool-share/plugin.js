@@ -1,3 +1,7 @@
+
+
+
+
 (function ($) {
 
 	$.fn.shareButtons = function (url, options) {

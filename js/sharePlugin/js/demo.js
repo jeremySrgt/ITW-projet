@@ -1,6 +1,6 @@
 $(function (){
 
-	var url = 'perso.esiee.fr/~surgetj';
+	var url = 'perso.esiee.fr/~surgetj/ITWPROJET/html/index.html';
 
 	var options = {
 
